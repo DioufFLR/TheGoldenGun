@@ -1,2 +1,5 @@
-# TheGoldenGun
-Site marchand en Symfony 6
+# The golden gun
+
+```
+Bonjour voici un site e-commerce en Symfony 6
+```
