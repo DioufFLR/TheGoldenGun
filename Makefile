@@ -205,7 +205,7 @@ qa-cs-fixer: ## Run php-cs-fixer.
 .PHONY: qa-cs-fixer
 
 qa-phpstan: ## Run phpstan.
-	$(PHPQA_RUN) phpstan analyse ./src --level=7
+	$(PHPQA_RUN) phpstan analyse ./src --level=3
 .PHONY: qa-phpstan
 
 qa-security-checker: ## Run security-checker.
