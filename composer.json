@@ -42,11 +42,13 @@
         "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^3.4",
+        "fzaninotto/faker": "^1.5",
         "phpunit/phpunit": "^9.5",
         "symfony/browser-kit": "6.1.*",
         "symfony/css-selector": "6.1.*",
         "symfony/debug-bundle": "6.1.*",
-        "symfony/maker-bundle": "^1.0",
+        "symfony/maker-bundle": "^1.50",
         "symfony/phpunit-bridge": "^6.3",
         "symfony/stopwatch": "6.1.*",
         "symfony/web-profiler-bundle": "6.1.*"
@@ -92,6 +94,12 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
+        ],
+        "fixtures": [
+            "php bin/console d:d:d --force --if-exists",
+            "php bin/console d:d:c",
+            "php bin/console d:s:u --force --complete",
+            "php bin/console d:f:l"
         ]
     },
     "conflict": {
