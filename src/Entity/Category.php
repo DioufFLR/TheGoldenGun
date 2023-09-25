@@ -21,9 +21,8 @@ class Category
     #[ORM\Column(length: 100)]
     private ?string $categoryPicture = null;
 
-    #[ORM\ManyToOne(targetEntity: self::class, inversedBy: 'categorySub')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?self $categorySub = null;
+    #[ORM\ManyToOne(targetEntity: self::class, inversedBy: 'categories')]
+    private ?self $category_sub = null;
 
     #[ORM\OneToMany(mappedBy: 'category', targetEntity: Product::class, orphanRemoval: true)]
     private Collection $products;

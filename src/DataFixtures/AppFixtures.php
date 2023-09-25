@@ -8,6 +8,7 @@ use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory as Faker;
+use phpDocumentor\Reflection\Types\Null_;
 
 class AppFixtures extends Fixture
 {
@@ -48,17 +49,41 @@ class AppFixtures extends Fixture
 
         // Création de 8 catégories
 
-        $categorySub = new Category();
-        $categorySub->setCategoryName('Pistolet')
-            ->setCategorySub(2)
-            ->setCategoryPicture('2151s2df23as1dfasdf');
-        $manager->persist($categorySub);
+        $category = new Category();
+        $category->setCategoryName('Armes de poing')
+            ->setCategorySub(null)
+            ->setCategoryPicture($faker->image(width: 200, height: 200));
+        $manager->persist($category);
 
-//        $category = new Category();
-//        $category->setCategoryName('Armes de poing')
-//            ->setCategoryPicture('asdlkfjasldfladsjfladf')
-//            ->setCategorySub('');
-//        $manager->persist($category);
+        $category2 = new Category();
+        $category2->setCategoryName('Armes de poing')
+            ->setCategorySub(null)
+            ->setCategoryPicture($faker->image(width: 200, height: 200));
+        $manager->persist($category2);
+
+        $category3 = new Category();
+        $category3->setCategoryName('Armes de poing')
+            ->setCategorySub(null)
+            ->setCategoryPicture($faker->image(width: 200, height: 200));
+        $manager->persist($category3);
+
+        $category4 = new Category();
+        $category4->setCategoryName('Armes de poing')
+            ->setCategorySub(null)
+            ->setCategoryPicture($faker->image(width: 200, height: 200));
+        $manager->persist($category4);
+
+        $category5 = new Category();
+        $category5->setCategoryName('Armes de poing')
+            ->setCategorySub(null)
+            ->setCategoryPicture($faker->image(width: 200, height: 200));
+        $manager->persist($category5);
+
+        $category6 = new Category();
+        $category6->setCategoryName('Armes de poing')
+            ->setCategorySub(null)
+            ->setCategoryPicture($faker->image(width: 200, height: 200));
+        $manager->persist($category6);
 
         $manager->flush();
     }
