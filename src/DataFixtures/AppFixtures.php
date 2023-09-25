@@ -3,9 +3,12 @@
 namespace App\DataFixtures;
 
 use App\Entity\Category;
+use App\Entity\Order;
+use App\Entity\Payment;
 use App\Entity\Product;
 use App\Entity\Supplier;
 use App\Entity\User;
+use ContainerMlmuyQD\getSupplierRepositoryService;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory as Faker;
@@ -92,11 +95,30 @@ class AppFixtures extends Fixture
                 ->setProductDescription($faker->sentence($nbWords = 6, $variableNbWords = true))
                 ->setProductStock($faker->numberBetween($min = 0, $max = 2000))
                 ->setProductPicture($faker->image(width: 100, height: 100))
-                ->setProductPrice($faker->randomFloat(3, 3, 10000))
+                ->setProductPrice($faker->randomFloat(3, 1, 1000))
                 ->setIsActive(true)
-                ->setCategory($category3)
+                ->setCategory($faker->randomElement([$category3, $category4, $category5, $category6]))
                 ->setSupplier($faker->randomElement([$supplier]));
             $manager->persist($product);
+        }
+
+        for ($i = 0; $i < 10; $i++){
+            $order = new Order();
+            $order->setOrderDate($faker->dateTime)
+                ->setOrderDelivery($i)
+                ->setOrderBilling($i)
+                ->setOrderStatus($faker->randomElement(['En cours', 'Expédié', 'Annulée']))
+                ->setUser($user);
+            $manager->persist($order);
+        }
+
+        for ($i = 0; $i < 10; $i++){
+            $payment = new Payment();
+            $payment->setPaymentOrder($order)
+                ->setPaymentMethod($faker->randomElement(['CB', 'Paypal', 'Crédit', 'Bitcoins']))
+                ->setPaymentDate($faker->dateTime)
+                ->setPaymentAmount($faker->randomFloat(3, 1, 20000));
+            $manager->persist($payment);
         }
 
         $manager->flush();

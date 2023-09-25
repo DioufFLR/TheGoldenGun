@@ -17,7 +17,7 @@ class Order
     private ?int $id = null;
 
     #[ORM\Column]
-    private ?\DateTimeImmutable $orderDate = null;
+    private ?\DateTime $orderDate = null;
 
     #[ORM\Column(length: 100)]
     private ?string $orderDelivery = null;
@@ -51,12 +51,12 @@ class Order
         return $this->id;
     }
 
-    public function getOrderDate(): ?\DateTimeImmutable
+    public function getOrderDate(): ?\DateTime
     {
         return $this->orderDate;
     }
 
-    public function setOrderDate(\DateTimeImmutable $orderDate): static
+    public function setOrderDate(\DateTime $orderDate): static
     {
         $this->orderDate = $orderDate;
 
