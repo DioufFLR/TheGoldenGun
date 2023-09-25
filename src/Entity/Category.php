@@ -64,12 +64,13 @@ class Category
 
     public function getCategorySub(): ?self
     {
-        return $this->categorySub;
+        return $this->category_sub;
     }
 
-    public function setCategorySub(?self $categorySub): static
+
+    public function setCategorySub(?self $category_sub): static
     {
-        $this->categorySub = $categorySub;
+        $this->category_sub = $category_sub;
 
         return $this;
     }

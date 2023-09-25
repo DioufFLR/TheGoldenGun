@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Category;
+use App\Entity\Product;
 use App\Entity\Supplier;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -49,41 +50,54 @@ class AppFixtures extends Fixture
 
         // Création de 8 catégories
 
-        $category = new Category();
-        $category->setCategoryName('Armes de poing')
-            ->setCategorySub(null)
+        $mainCategory = new Category();
+        $mainCategory->setCategoryName('Armes de poing')
             ->setCategoryPicture($faker->image(width: 200, height: 200));
-        $manager->persist($category);
+        $manager->persist($mainCategory);
 
-        $category2 = new Category();
-        $category2->setCategoryName('Armes de poing')
-            ->setCategorySub(null)
+        $mainCategory2 = new Category();
+        $mainCategory2->setCategoryName("Armes d'épaule")
             ->setCategoryPicture($faker->image(width: 200, height: 200));
-        $manager->persist($category2);
+        $manager->persist($mainCategory2);
 
         $category3 = new Category();
-        $category3->setCategoryName('Armes de poing')
-            ->setCategorySub(null)
+        $category3->setCategoryName('Revolver')
+            ->setCategorySub($mainCategory)
             ->setCategoryPicture($faker->image(width: 200, height: 200));
         $manager->persist($category3);
 
         $category4 = new Category();
-        $category4->setCategoryName('Armes de poing')
-            ->setCategorySub(null)
+        $category4->setCategoryName('Pistolet')
+            ->setCategorySub($mainCategory)
             ->setCategoryPicture($faker->image(width: 200, height: 200));
         $manager->persist($category4);
 
         $category5 = new Category();
-        $category5->setCategoryName('Armes de poing')
-            ->setCategorySub(null)
+        $category5->setCategoryName('Pistolet mitrailleur')
+            ->setCategorySub($mainCategory)
             ->setCategoryPicture($faker->image(width: 200, height: 200));
         $manager->persist($category5);
 
         $category6 = new Category();
-        $category6->setCategoryName('Armes de poing')
-            ->setCategorySub(null)
+        $category6->setCategoryName("Fusil d'assaut")
+            ->setCategorySub($mainCategory2)
             ->setCategoryPicture($faker->image(width: 200, height: 200));
         $manager->persist($category6);
+
+    // Création de 100 produits
+
+        for ($i = 0; $i < 100; $i++){
+            $product = new Product();
+            $product->setProductLabel($faker->word)
+                ->setProductDescription($faker->sentence($nbWords = 6, $variableNbWords = true))
+                ->setProductStock($faker->numberBetween($min = 0, $max = 2000))
+                ->setProductPicture($faker->image(width: 100, height: 100))
+                ->setProductPrice($faker->randomFloat(3, 3, 10000))
+                ->setIsActive(true)
+                ->setCategory($category3)
+                ->setSupplier($faker->randomElement([$supplier]));
+            $manager->persist($product);
+        }
 
         $manager->flush();
     }
