@@ -89,7 +89,7 @@ class AppFixtures extends Fixture
 
     // Création de 100 produits
 
-        for ($i = 0; $i < 100; $i++){
+        for ($i = 0; $i < 10; $i++){
             $product = new Product();
             $product->setProductLabel($faker->word)
                 ->setProductDescription($faker->sentence($nbWords = 6, $variableNbWords = true))
@@ -109,10 +109,13 @@ class AppFixtures extends Fixture
                 ->setOrderBilling($i)
                 ->setOrderStatus($faker->randomElement(['En cours', 'Expédié', 'Annulée']))
                 ->setUser($user);
+            $this->addReference('order-'. $i, $order);
             $manager->persist($order);
         }
 
-        for ($i = 0; $i < 10; $i++){
+        for ($i = 0; $i <= mt_rand(1, 10) ; $i++){
+            $order=$this->getReference('order-'. rand(1, 9));
+
             $payment = new Payment();
             $payment->setPaymentOrder($order)
                 ->setPaymentMethod($faker->randomElement(['CB', 'Paypal', 'Crédit', 'Bitcoins']))
