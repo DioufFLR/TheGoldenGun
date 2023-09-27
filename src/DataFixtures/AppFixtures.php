@@ -3,6 +3,8 @@
 namespace App\DataFixtures;
 
 use App\Entity\Category;
+use App\Entity\Delivery;
+use App\Entity\Note;
 use App\Entity\Order;
 use App\Entity\Payment;
 use App\Entity\Product;
@@ -13,6 +15,7 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory as Faker;
 use phpDocumentor\Reflection\Types\Null_;
+use phpDocumentor\Reflection\Types\This;
 
 class AppFixtures extends Fixture
 {
@@ -99,10 +102,13 @@ class AppFixtures extends Fixture
                 ->setIsActive(true)
                 ->setCategory($faker->randomElement([$category3, $category4, $category5, $category6]))
                 ->setSupplier($faker->randomElement([$supplier]));
+            $this->addReference('product-' . $i, $product);
             $manager->persist($product);
         }
 
-        for ($i = 0; $i < 10; $i++){
+//        Création de 10 Order
+
+        for ($i = 1; $i < 11; $i++){
             $order = new Order();
             $order->setOrderDate($faker->dateTime)
                 ->setOrderDelivery($i)
@@ -113,8 +119,10 @@ class AppFixtures extends Fixture
             $manager->persist($order);
         }
 
-        for ($i = 0; $i <= mt_rand(1, 10) ; $i++){
-            $order=$this->getReference('order-'. rand(1, 9));
+//        Création de 10 Payment
+
+        for ($i = 1; $i <= mt_rand(1, 10) ; $i++){
+            $order = $this->getReference('order-'. rand(1, 10));
 
             $payment = new Payment();
             $payment->setPaymentOrder($order)
@@ -124,6 +132,32 @@ class AppFixtures extends Fixture
             $manager->persist($payment);
         }
 
+//        Création de 10 Delivery
+
+        for ($i = 1; $i <= mt_rand(1, 10) ; $i++){
+            $order = $this->getReference('order-'. rand(1, 10));
+
+            $delivery = new Delivery();
+            $delivery->setDeliveryOrder($order)
+                ->setDeliveryCompagny($faker->company)
+                ->setDeliveryDate($faker->dateTime);
+            $this->addReference('delivery-' . $i, $delivery);
+            $manager->persist($delivery);
+
+        }
+
+//        Création de 10 Note
+
+        for ($i = 1; $i <= mt_rand(1, 10); $i++){
+            $product = $this->getReference('product-' . rand(1, 10));
+            $delivery = $this->getReference('delivery-' . rand(1, 10));
+
+            $note = new Note();
+            $note->setDelivery($delivery)
+                ->setProduct($product)
+                ->setQuantity($faker->numberBetween(1, 100));
+            $manager->persist($note);
+        }
         $manager->flush();
     }
 }

@@ -19,7 +19,7 @@ class Delivery
     private ?string $deliveryCompagny = null;
 
     #[ORM\Column]
-    private ?\DateTimeImmutable $deliveryDate = null;
+    private ?\DateTime $deliveryDate = null;
 
     #[ORM\ManyToOne(inversedBy: 'deliveries')]
     #[ORM\JoinColumn(nullable: false)]
@@ -50,12 +50,12 @@ class Delivery
         return $this;
     }
 
-    public function getDeliveryDate(): ?\DateTimeImmutable
+    public function getDeliveryDate(): ?\DateTime
     {
         return $this->deliveryDate;
     }
 
-    public function setDeliveryDate(\DateTimeImmutable $deliveryDate): static
+    public function setDeliveryDate(\DateTime $deliveryDate): static
     {
         $this->deliveryDate = $deliveryDate;
 
