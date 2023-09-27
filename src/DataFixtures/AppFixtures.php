@@ -6,6 +6,7 @@ use App\Entity\Category;
 use App\Entity\Delivery;
 use App\Entity\Note;
 use App\Entity\Order;
+use App\Entity\OrderDetails;
 use App\Entity\Payment;
 use App\Entity\Product;
 use App\Entity\Supplier;
@@ -92,7 +93,7 @@ class AppFixtures extends Fixture
 
     // Création de 100 produits
 
-        for ($i = 0; $i < 10; $i++){
+        for ($i = 1; $i < 11; $i++){
             $product = new Product();
             $product->setProductLabel($faker->word)
                 ->setProductDescription($faker->sentence($nbWords = 6, $variableNbWords = true))
@@ -121,7 +122,7 @@ class AppFixtures extends Fixture
 
 //        Création de 10 Payment
 
-        for ($i = 1; $i <= mt_rand(1, 10) ; $i++){
+        for ($i = 1; $i <= mt_rand(1, 11); $i++){
             $order = $this->getReference('order-'. rand(1, 10));
 
             $payment = new Payment();
@@ -134,7 +135,7 @@ class AppFixtures extends Fixture
 
 //        Création de 10 Delivery
 
-        for ($i = 1; $i <= mt_rand(1, 10) ; $i++){
+        for ($i = 1; $i < 11; $i++){
             $order = $this->getReference('order-'. rand(1, 10));
 
             $delivery = new Delivery();
@@ -143,12 +144,11 @@ class AppFixtures extends Fixture
                 ->setDeliveryDate($faker->dateTime);
             $this->addReference('delivery-' . $i, $delivery);
             $manager->persist($delivery);
-
         }
 
 //        Création de 10 Note
 
-        for ($i = 1; $i <= mt_rand(1, 10); $i++){
+        for ($i = 1; $i <= mt_rand(1, 11); $i++){
             $product = $this->getReference('product-' . rand(1, 10));
             $delivery = $this->getReference('delivery-' . rand(1, 10));
 
@@ -157,6 +157,21 @@ class AppFixtures extends Fixture
                 ->setProduct($product)
                 ->setQuantity($faker->numberBetween(1, 100));
             $manager->persist($note);
+        }
+
+//        Création de 10 OrderDetails
+
+        for ($i = 1; $i <= mt_rand(1, 4); $i++){
+            $order = $this->getReference('order-' . rand(1, 4));
+            $product = $this->getReference('product-' . rand(1, 10));
+
+            $orderDetails = new OrderDetails();
+            $orderDetails->setProduct($product)
+                ->setDetailOrder($order)
+                ->setDetailQuantity($faker->numberBetween(1, 100))
+                ->setDetailReduction(null)
+                ->setDetailUnitPrice($faker->randomFloat(3, 1, 1000));
+            $manager->persist($orderDetails);
         }
         $manager->flush();
     }
