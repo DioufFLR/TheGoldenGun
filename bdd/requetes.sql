@@ -127,4 +127,3 @@ GROUP BY
 SELECT COUNT(*) AS nombre_commandes_en_cours_de_livraison
 FROM `order`
 WHERE order_status = 'En cours';
-
