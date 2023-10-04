@@ -11,12 +11,10 @@ use App\Entity\Payment;
 use App\Entity\Product;
 use App\Entity\Supplier;
 use App\Entity\User;
-use ContainerMlmuyQD\getSupplierRepositoryService;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory as Faker;
-use phpDocumentor\Reflection\Types\Null_;
-use phpDocumentor\Reflection\Types\This;
+
 
 class AppFixtures extends Fixture
 {

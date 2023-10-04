@@ -120,11 +120,11 @@ FROM
         JOIN
     user ON `order`.user_id = user.id
 GROUP BY
-    user.user_type
+    user.user_type;
 
 -- Nombre de commandes en cours de livraison
 
 SELECT COUNT(*) AS nombre_commandes_en_cours_de_livraison
 FROM `order`
-WHERE order_status = 'En cours de livraison';
+WHERE order_status = 'En cours';
 
