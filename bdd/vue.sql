@@ -4,7 +4,7 @@ CREATE VIEW produitFournisseur
 AS
 SELECT s.id as supplierID, p.id as productID, s.supplier_name, s.supplier_phone, s.supplier_city, s.supplier_adress, s.supplier_pc, s.supplier_country, category_id, p.product_label, p.product_description, p.product_stock, p.product_picture, p.product_price, p.is_active
 FROM product p
-JOIN thegoldengun.supplier s on s.id = p.supplier_id;
+JOIN supplier s on s.id = p.supplier_id;
 
 
 -- Vue Product/Category

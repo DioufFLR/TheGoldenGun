@@ -1,4 +1,5 @@
 -- Chiffre d'affaires mois par mois pour une année sélectionnée
+
 SELECT
     MONTH(order_date) AS mois,
     YEAR(order_date) AS annee,
