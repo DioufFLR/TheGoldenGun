@@ -13,6 +13,8 @@ body {
     background: url('img/background2.jpg') no-repeat center;
 }
 
+/* Navbar */
+
 .header {
     position: fixed;
     top: 0;
@@ -136,4 +138,32 @@ body {
         opacity: 1;
         transition-delay: calc(.15s * var(--i));
     }
+}
+
+/* Footer */
+
+footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(to right, indianred, rgba(255, 255, 255, .4), indianred);
+    color: #fff;
+    padding: 100px 0 30px;
+    border-top-left-radius: 125px;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.row {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.col {
+    flex-basis: 25%;
+    padding: 10px;
 }
