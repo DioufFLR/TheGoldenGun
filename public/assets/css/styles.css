@@ -154,7 +154,11 @@ footer {
     line-height: 20px;
 }
 
-.row {
+.row-css p {
+    margin-bottom: 0;
+}
+
+.row-css {
     width: 85%;
     margin: auto;
     display: flex;
@@ -163,7 +167,85 @@ footer {
     justify-content: space-between;
 }
 
-.col {
+.col-css {
     flex-basis: 25%;
     padding: 10px;
+}
+
+.col-css:nth-child(2), .col-css:nth-child(3) {
+    flex-basis: 15%;
+}
+
+.logo-footer {
+    width: 80px;
+    margin-bottom: 30px;
+}
+
+.col-css h3 {
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.email-id {
+    width: fit-content;
+    border-bottom: 1px solid #fff;
+    margin: 20px 0;
+}
+
+.row-css ul li {
+    list-style: none;
+    margin-bottom: 12px;
+}
+
+.row-css ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+form {
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 50px;
+}
+
+form .bx {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+form input {
+    width: 100%;
+    background: transparent;
+    color: #fff;
+    border: 0;
+    outline: none;
+}
+
+form button {
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+form button .bx {
+    font-size: 16px;
+    color: #ccc;
+}
+
+.social-icons .bx {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: #073435;
+    background: #fff;
+    margin-right: 15px;
+    cursor: pointer;
 }
