@@ -120,7 +120,7 @@ body {
     }
 
     #check:checked~.navbar-css {
-        height: 17.7rem;
+        height: 14rem;
     }
 
     .navbar-css a {
@@ -248,4 +248,27 @@ form button .bx {
     background: #fff;
     margin-right: 15px;
     cursor: pointer;
+}
+
+.input-footer::placeholder {
+    color: #fff;
+}
+
+.h4-num-footer {
+    margin-top: 25px;
+}
+
+hr {
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    margin: 20px auto;
+}
+
+.copyright {
+    text-align: center;
+}
+
+.ul-footer ol, ul {
+    padding-left: 0;
 }
