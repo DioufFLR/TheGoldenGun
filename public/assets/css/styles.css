@@ -28,7 +28,7 @@ body {
 
 .header::before {
     content: '';
-    position: absolute;
+    position: absolute ;
     top: 0;
     left: 0;
     width: 100%;
@@ -146,9 +146,9 @@ footer {
     width: 100%;
     position: absolute;
     bottom: 0;
-    background: linear-gradient(to right, indianred, rgba(255, 255, 255, .4), indianred);
+    background: linear-gradient(90deg, transparent, rgb(184,124,121), transparent);
     color: #fff;
-    padding: 100px 0 30px;
+    padding: 50px 0 30px;
     border-top-left-radius: 125px;
     font-size: 13px;
     line-height: 20px;
@@ -178,7 +178,7 @@ footer {
 
 .logo-footer {
     width: 80px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 .col-css h3 {
@@ -262,7 +262,7 @@ hr {
     width: 90%;
     border: 0;
     border-bottom: 1px solid #ccc;
-    margin: 20px auto;
+    margin: 20px auto !important;
 }
 
 .copyright {
