@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root {
+    --primary-color: #111317;
+    --primary-color-light: #1f2125;
+    --primary-color-extra-light: #35373b;
+    --secondary-color-dark: rgb(184,124,121);
+    --tertiary-color-dark: #073435;
+    --secondary-color-green: rgb(99,255,204);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -33,7 +42,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgb(184,124,121), transparent);
+    background: linear-gradient(90deg, transparent, var(--secondary-color-dark), transparent);
     backdrop-filter: blur(50px);
     z-index: -1;
 }
@@ -144,10 +153,11 @@ body {
 
 footer {
     width: 100%;
-    position: absolute;
+    position: sticky;
     bottom: 0;
-    background: linear-gradient(90deg, transparent, rgb(184,124,121), transparent);
+    background: linear-gradient(90deg, transparent, var(--secondary-color-dark), transparent);
     color: #fff;
+    margin-top: 10px;
     padding: 50px 0 30px;
     border-top-left-radius: 125px;
     font-size: 13px;
@@ -244,7 +254,7 @@ form button .bx {
     text-align: center;
     line-height: 40px;
     font-size: 20px;
-    color: #073435;
+    color: var(--tertiary-color-dark);
     background: #fff;
     margin-right: 15px;
     cursor: pointer;
@@ -283,7 +293,7 @@ hr {
 .underline span {
     width: 15px;
     height: 100%;
-    background: #b87c79;
+    background: var(--secondary-color-dark);
     border-radius: 3px;
     position: absolute;
     top: 0;
@@ -312,4 +322,82 @@ hr {
     .col-css:nth-child(2), .col-css:nth-child(3) {
         flex-basis: 100%;
     }
+}
+
+/* Main cards */
+
+.main-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px 50px;
+    padding: 100px 50px;
+    margin-top: 6em;
+
+}
+
+.main-container .card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 350px;
+    height: 300px;
+    background: linear-gradient(90deg, transparent, var(--secondary-color-green), transparent);
+    border-radius: 20px;
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+    transition: 0.5s;
+}
+
+.main-container .card:hover {
+    height: 400px;
+}
+
+.main-container .card .imgBx {
+    position: absolute;
+    width: 300px;
+    height: 220px;
+    background: #333;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.main-container .card:hover .imgBx {
+    top: -100px;
+    scale: 0.75;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.main-container .card .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main-container .card .content {
+    position: absolute;
+    top: 252px;
+    width: 100%;
+    padding: 0 30px;
+    height: 30px;
+    overflow: hidden;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.main-container .card:hover .content {
+    top: 130px;
+    height: 250px;
+}
+
+.main-container .card .content h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--clr);
 }
