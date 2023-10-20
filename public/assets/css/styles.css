@@ -335,8 +335,6 @@ hr {
     gap: 100px 50px;
     padding: 100px 50px;
     margin-top: 6em;
-    background: red;
-
 }
 
 .main-container .card {
@@ -402,3 +400,5 @@ hr {
     font-weight: 700;
     color: var(--clr);
 }
+
+/* Bandeau */
