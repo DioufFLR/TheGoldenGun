@@ -7,19 +7,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 {#        Feuilles de styles #}
-        {% block stylesheets %}
-            <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-            <!-- MDB -->
-            <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet">
-{#            <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">#}
-        {% endblock %}
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <!-- MDB -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet">
+        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
 
 {#        Fichier JS #}
-        {% block javascripts %}
-            <!-- MDB -->
-            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
-            <script src="{{ asset('assets/js/scripts.js') }}"></script>
-        {% endblock %}
+        <!-- MDB -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+        <script src="{{ asset('assets/js/scripts.js') }}"></script>
+        {% block javascripts %}{% endblock %}
     </head>
     <body>
     <div class="container-fluide bg-tertiary">
