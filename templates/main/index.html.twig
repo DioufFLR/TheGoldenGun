@@ -2,47 +2,152 @@
 
 {% block body %}
 
-    <section class="main">
-        <div class="card-text">
-            <div class="titre">
-                <h1>Bienvenue sur le site The Golden Gun</h1>
-            </div>
-            <div class="text-bandeau">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et non provident saepe vel veritatis. Asperiores facere modi ratione vel velit.</p>
-            </div>
-        </div>
-        <div class="main-container">
-            <div class="card" style="--clr: #009688">
-                <div class="imgBx">
-                    <img src="{{ asset('assets/css/img/222109.jpg') }}" alt="produit">
+
+    <!--Main Navigation-->
+
+    <!--Main layout-->
+    <main class="mt-5">
+        <div class="container">
+            <!--Section: Content-->
+            <section>
+                <div class="row">
+                    <div class="col-md-6 gx-5 mb-4">
+                        <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
+                            <img src="{{ asset('assets/css/img/landing.jpg') }}" class="img-fluid" />
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 gx-5 mb-4">
+                        <h4><strong>Car protéger ceux que l'on aime n'a pas de prix</strong></h4>
+                        <p class="text-muted">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consequatur
+                            eligendi quisquam doloremque vero ex debitis veritatis placeat unde animi laborum
+                            sapiente illo possimus, commodi dignissimos obcaecati illum maiores corporis.
+                        </p>
+                        <p><strong>Pourquoi choisir TheGoldenGun ?</strong></p>
+                        <p class="text-muted">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod itaque voluptate
+                            nesciunt laborum incidunt. Officia, quam consectetur. Earum eligendi aliquam illum
+                            alias, unde optio accusantium soluta, iusto molestiae adipisci et?
+                        </p>
+                    </div>
                 </div>
-                <div class="content">
-                    <h2>Salam</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolor eligendi facilis id illum laborum officia pariatur quod, repellendus repudiandae!</p>
-                    <a href="#">Read more</a>
+            </section>
+            <!--Section: Content-->
+
+            <hr class="my-5" />
+
+            <!--Section: Content-->
+            <section class="text-center">
+                <h4 class="mb-5"><strong>Catégories les plus consultées</strong></h4>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 mb-4">
+                        <div class="card">
+                            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                <img src="{{ asset('assets/css/img/pistolet.jpg') }}" class="img-fluid" />
+                                <a href="#!">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Armes de poings</h5>
+                                <p class="card-text">
+                                    Some quick example text to build on the card title and make up the bulk of the
+                                    card's content.
+                                </p>
+                                <a href="#!" class="btn btn-primary">Voir</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card">
+                            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                <img src="{{ asset('assets/css/img/fusil1.jpg') }}" class="img-fluid" />
+                                <a href="#!">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Armes d'épaules</h5>
+                                <p class="card-text">
+                                    Some quick example text to build on the card title and make up the bulk of the
+                                    card's content.
+                                </p>
+                                <a href="#!" class="btn btn-primary">Voir</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card">
+                            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                <img src="{{ asset('assets/css/img/exotiques.jpg') }}" class="img-fluid" />
+                                <a href="#!">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Armes exotiques</h5>
+                                <p class="card-text">
+                                    Some quick example text to build on the card title and make up the bulk of the
+                                    card's content.
+                                </p>
+                                <a href="#!" class="btn btn-primary">Voir</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="card" style="--clr: #ff3e7f">
-                <div class="imgBx">
-                    <img src="{{ asset('assets/css/img/background.jpg') }}" alt="produit">
-                </div>
-                <div class="content">
-                    <h2>Shalom</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolor eligendi facilis id illum laborum officia pariatur quod, repellendus repudiandae!</p>
-                    <a href="#">Read more</a>
-                </div>
-            </div>
-            <div class="card" style="--clr: #04a9f4">
-                <div class="imgBx">
-                    <img src="{{ asset('assets/css/img/background2.jpg') }}" alt="produit">
-                </div>
-                <div class="content">
-                    <h2>Salut</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolor eligendi facilis id illum laborum officia pariatur quod, repellendus repudiandae!</p>
-                    <a href="#">Read more</a>
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
+            <!--Section: Content-->
+
+            <hr class="my-5" />
+
+{#    <section class="main">#}
+{#        <div class="card-text">#}
+{#            <div class="titre">#}
+{#                <h1>Bienvenue sur le site The Golden Gun</h1>#}
+{#            </div>#}
+{#            <div class="text-bandeau">#}
+{#                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et non provident saepe vel veritatis. Asperiores facere modi ratione vel velit.</p>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="main-container">#}
+{#            <div class="card" style="--clr: #009688">#}
+{#                <div class="imgBx">#}
+{#                    <img src="{{ asset('assets/css/img/222109.jpg') }}" alt="produit">#}
+{#                </div>#}
+{#                <div class="content">#}
+{#                    <h2>Salam</h2>#}
+{#                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolor eligendi facilis id illum laborum officia pariatur quod, repellendus repudiandae!</p>#}
+{#                    <a href="#">Read more</a>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="card" style="--clr: #ff3e7f">#}
+{#                <div class="imgBx">#}
+{#                    <img src="{{ asset('assets/css/img/background.jpg') }}" alt="produit">#}
+{#                </div>#}
+{#                <div class="content">#}
+{#                    <h2>Shalom</h2>#}
+{#                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolor eligendi facilis id illum laborum officia pariatur quod, repellendus repudiandae!</p>#}
+{#                    <a href="#">Read more</a>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="card" style="--clr: #04a9f4">#}
+{#                <div class="imgBx">#}
+{#                    <img src="{{ asset('assets/css/img/background2.jpg') }}" alt="produit">#}
+{#                </div>#}
+{#                <div class="content">#}
+{#                    <h2>Salut</h2>#}
+{#                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolor eligendi facilis id illum laborum officia pariatur quod, repellendus repudiandae!</p>#}
+{#                    <a href="#">Read more</a>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </section>#}
 
 {% endblock %}

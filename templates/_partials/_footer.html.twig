@@ -1,45 +1,287 @@
-<footer>
-    <div class="row-css">
-        <div class="col-css">
-            <a href="#" class="logo logo-footer"><img src="{{ asset('assets/css/img/logoreel.png') }}" alt="logo" class="p-5"></a>
-            <p>Aenean et venenatis risus. Etiam sit amet elit enim. Maecenas a urna malesuada, consectetur ligula ut, placerat velit. Sed eleifend malesuada mauris, vel tincidunt justo sollicitudin id. Vestibulum eleifend velit nec nunc aliquam, id aliquet orci pretium. Maecenas eu ex a eros condimentum gravida ut sit amet mauris. Sed sagittis mi massa, vitae tincidunt ante lobortis imperdiet. Fusce enim metus, malesuada nec libero a.</p>
-        </div>
-        <div class="col-css">
-            <h3>Contact <div class="underline"><span></span></div></h3>
-            <p>Rue de paix</p>
-            <p>Paris, Ile de France</p>
-            <p>75010, France</p>
-            <p class="email-id">geoffreyfleur@gmail.com</p>
-            <h4 class="h4-num-footer">+33 344051234</h4>
-        </div>
-        <div class="col-css">
-            <h3>Liens <div class="underline"><span></span></div></h3>
-            <ul class="ul-footer">
-                <li class="ul-footer"><a href="#">Accueil</a></li>
-                <li class="ul-footer"><a href="#">Catégories</a></li>
-                <li class="ul-footer"><a href="#">Mon compte</a></li>
-                <li class="ul-footer"><a href="#">Panier</a></li>
-                <li class="ul-footer"><a href="#">Contacts</a></li>
-            </ul>
-        </div>
-        <div class="col-css">
-            <h3>Newsletter <div class="underline"><span></span></div></h3>
-            <form action="">
-                <i class='bx bxs-envelope'></i>
-                <label>
-                    <input class="input-footer" type="email" placeholder="Entrez votre email">
-                </label>
-                <button type="submit"><i class='bx bxs-right-arrow-alt'></i></button>
+{# Footer bootstrap #}
+
+<!--Section: Content-->
+<section class="mb-5">
+    <h4 class="mb-5 text-center"><strong>S'abonner à la newsletter</strong></h4>
+
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-6">
+            <form>
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" id="form3Example1" class="form-control" />
+                            <label class="form-label" for="form3Example1">Prénom</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" id="form3Example2" class="form-control" />
+                            <label class="form-label" for="form3Example2">Nom</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                    <input type="email" id="form3Example3" class="form-control" />
+                    <label class="form-label" for="form3Example3">Email</label>
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                    <input type="password" id="form3Example4" class="form-control" />
+                    <label class="form-label" for="form3Example4">Mot de passe</label>
+                </div>
+
+                <!-- Checkbox -->
+                <div class="form-check d-flex justify-content-center mb-4">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" checked />
+                    <label class="form-check-label" for="form2Example3">
+                        Souscrire à notre newsletter
+                    </label>
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4">
+                    S'inscrire
+                </button>
+
+                <!-- Register buttons -->
+                <div class="text-center">
+                    <p>ou s'inscrire avec:</p>
+                    <button type="button" class="btn btn-primary btn-floating mx-1">
+                        <i class='bx bxl-facebook-circle' style='color:#ffffff' ></i>
+                    </button>
+
+                    <button type="button" class="btn btn-primary btn-floating mx-1">
+                        <i class='bx bxl-google' style='color:#ffffff' ></i>
+                    </button>
+
+                    <button type="button" class="btn btn-primary btn-floating mx-1">
+                        <i class='bx bxl-twitter' style='color:#ffffff' ></i>
+                    </button>
+
+                    <button type="button" class="btn btn-primary btn-floating mx-1">
+                        <i class='bx bxl-github' style='color:#ffffff' ></i>
+                    </button>
+                </div>
             </form>
-            <div class="social-icons">
-                <i class='bx bxl-facebook-circle'></i>
-                <i class='bx bxl-whatsapp-square'></i>
-                <i class='bx bxl-youtube'></i>
-                <i class='bx bxl-linkedin-square' ></i>
-                <i class='bx bxl-instagram-alt' ></i>
-            </div>
         </div>
     </div>
-    <hr>
-    <p class="copyright">Geoffrey Fleur 2023 © - All Rights Reserved</p>
+</section>
+<!--Section: Content-->
+</div>
+</main>
+<!--Main layout-->
+
+<!--Footer-->
+<footer class="bg-light text-lg-start">
+    <div class="py-4 text-center">
+        <a role="button" class="btn btn-primary btn-lg m-2"
+           href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" rel="nofollow" target="_blank">
+            Learn Bootstrap 5
+        </a>
+        <a role="button" class="btn btn-primary btn-lg m-2" href="https://mdbootstrap.com/docs/standard/" target="_blank">
+            Download MDB UI KIT
+        </a>
+    </div>
+
+    <hr class="m-0" />
+
+    <div class="text-center py-4 align-items-center">
+        <p>Follow MDB on social media</p>
+        <a href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" class="btn btn-primary m-1" role="button"
+           rel="nofollow" target="_blank">
+            <i class='bx bxl-instagram-alt h5' style='color:#ffffff' ></i>
+        </a>
+        <a href="https://www.facebook.com/mdbootstrap" class="btn btn-primary m-1" role="button" rel="nofollow"
+           target="_blank">
+            <i class='bx bxl-facebook-circle h5' style='color:#ffffff' ></i>
+        </a>
+        <a href="https://twitter.com/MDBootstrap" class="btn btn-primary m-1" role="button" rel="nofollow"
+           target="_blank">
+            <i class='bx bxl-twitter h5' style='color:#ffffff' ></i>
+        </a>
+        <a href="https://github.com/mdbootstrap/mdb-ui-kit" class="btn btn-primary m-1" role="button" rel="nofollow"
+           target="_blank">
+            <i class='bx bxl-github h5' style='color:#ffffff'  ></i>
+        </a>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 Copyright:
+        <a class="text-dark" href="https://mdbootstrap.com/">Fleur Geoffrey</a>
+    </div>
+    <!-- Copyright -->
 </footer>
+<!--Footer-->
+
+{#<!-- Footer -->#}
+{#<footer class="text-center text-lg-start bg-dark text-muted">#}
+{#    <!-- Section: Social media -->#}
+{#    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">#}
+{#        <!-- Left -->#}
+{#        <div class="me-5 d-none d-lg-block">#}
+{#            <span>Get connected with us on social networks:</span>#}
+{#        </div>#}
+{#        <!-- Left -->#}
+
+{#        <!-- Right -->#}
+{#        <div>#}
+{#            <a href="" class="me-4 link-secondary">#}
+{#                <i class='bx bxl-meta' style='color:#676464'></i>#}
+{#            </a>#}
+{#            <a href="" class="me-4 link-secondary">#}
+{#                <i class='bx bxl-twitter' style='color:#676464'></i>#}
+{#            </a>#}
+{#            <a href="" class="me-4 link-secondary">#}
+{#                <i class='bx bxl-google' style='color:#676464' ></i>#}
+{#            </a>#}
+{#            <a href="" class="me-4 link-secondary">#}
+{#                <i class='bx bxl-instagram-alt' style='color:#676464' ></i>#}
+{#            </a>#}
+{#            <a href="" class="me-4 link-secondary">#}
+{#                <i class='bx bxl-linkedin' style='color:#676464' ></i>#}
+{#            </a>#}
+{#            <a href="" class="me-4 link-secondary">#}
+{#                <i class='bx bxl-github' style='color:#676464' ></i>#}
+{#            </a>#}
+{#        </div>#}
+{#        <!-- Right -->#}
+{#    </section>#}
+{#    <!-- Section: Social media -->#}
+
+{#    <!-- Section: Links  -->#}
+{#    <section class="">#}
+{#        <div class="container text-center text-md-start mt-5">#}
+{#            <!-- Grid row -->#}
+{#            <div class="row mt-3">#}
+{#                <!-- Grid column -->#}
+{#                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">#}
+{#                    <!-- Content -->#}
+{#                        <img src="{{ asset('assets/css/img/logoreel.png') }}" class="mb-3" alt="logo" width="200px">#}
+{#                    <p>#}
+{#                        Here you can use rows and columns to organize your footer content. Lorem ipsum#}
+{#                        dolor sit amet, consectetur adipisicing elit.#}
+{#                    </p>#}
+{#                </div>#}
+{#                <!-- Grid column -->#}
+
+{#                <!-- Grid column -->#}
+{#                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">#}
+{#                    <!-- Links -->#}
+{#                    <h6 class="text-uppercase fw-bold mb-4">#}
+{#                        Products#}
+{#                    </h6>#}
+{#                    <p>#}
+{#                        <a href="#!" class="text-reset">Angular</a>#}
+{#                    </p>#}
+{#                    <p>#}
+{#                        <a href="#!" class="text-reset">React</a>#}
+{#                    </p>#}
+{#                    <p>#}
+{#                        <a href="#!" class="text-reset">Vue</a>#}
+{#                    </p>#}
+{#                    <p>#}
+{#                        <a href="#!" class="text-reset">Laravel</a>#}
+{#                    </p>#}
+{#                </div>#}
+{#                <!-- Grid column -->#}
+
+{#                <!-- Grid column -->#}
+{#                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">#}
+{#                    <!-- Links -->#}
+{#                    <h6 class="text-uppercase fw-bold mb-4">#}
+{#                        Useful links#}
+{#                    </h6>#}
+{#                    <p>#}
+{#                        <a href="#!" class="text-reset">Pricing</a>#}
+{#                    </p>#}
+{#                    <p>#}
+{#                        <a href="#!" class="text-reset">Settings</a>#}
+{#                    </p>#}
+{#                    <p>#}
+{#                        <a href="#!" class="text-reset">Orders</a>#}
+{#                    </p>#}
+{#                    <p>#}
+{#                        <a href="#!" class="text-reset">Help</a>#}
+{#                    </p>#}
+{#                </div>#}
+{#                <!-- Grid column -->#}
+
+{#                <!-- Grid column -->#}
+{#                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">#}
+{#                    <!-- Links -->#}
+{#                    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>#}
+{#                    <p><i class="fas fa-home me-3 text-secondary"></i> New York, NY 10012, US</p>#}
+{#                    <p>#}
+{#                        <i class="fas fa-envelope me-3 text-secondary"></i>#}
+{#                        info@example.com#}
+{#                    </p>#}
+{#                    <p><i class="fas fa-phone me-3 text-secondary"></i> + 01 234 567 88</p>#}
+{#                    <p><i class="fas fa-print me-3 text-secondary"></i> + 01 234 567 89</p>#}
+{#                </div>#}
+{#                <!-- Grid column -->#}
+{#            </div>#}
+{#            <!-- Grid row -->#}
+{#        </div>#}
+{#    </section>#}
+{#    <!-- Section: Links  -->#}
+
+{#    <!-- Copyright -->#}
+{#    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">#}
+{#        © 2023 Copyright:#}
+{#        <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Geoffrey Fleur</a>#}
+{#    </div>#}
+{#    <!-- Copyright -->#}
+{#</footer>#}
+{#<!-- Footer -->#}
+
+{#<footer>#}
+{#    <div class="row-css">#}
+{#        <div class="col-css">#}
+{#            <a href="#" class="logo logo-footer"><img src="{{ asset('assets/css/img/logoreel.png') }}" alt="logo" class="p-5"></a>#}
+{#            <p>Aenean et venenatis risus. Etiam sit amet elit enim. Maecenas a urna malesuada, consectetur ligula ut, placerat velit. Sed eleifend malesuada mauris, vel tincidunt justo sollicitudin id. Vestibulum eleifend velit nec nunc aliquam, id aliquet orci pretium. Maecenas eu ex a eros condimentum gravida ut sit amet mauris. Sed sagittis mi massa, vitae tincidunt ante lobortis imperdiet. Fusce enim metus, malesuada nec libero a.</p>#}
+{#        </div>#}
+{#        <div class="col-css">#}
+{#            <h3>Contact <div class="underline"><span></span></div></h3>#}
+{#            <p>Rue de paix</p>#}
+{#            <p>Paris, Ile de France</p>#}
+{#            <p>75010, France</p>#}
+{#            <p class="email-id">geoffreyfleur@gmail.com</p>#}
+{#            <h4 class="h4-num-footer">+33 344051234</h4>#}
+{#        </div>#}
+{#        <div class="col-css">#}
+{#            <h3>Liens <div class="underline"><span></span></div></h3>#}
+{#            <ul class="ul-footer">#}
+{#                <li class="ul-footer"><a href="#">Accueil</a></li>#}
+{#                <li class="ul-footer"><a href="#">Catégories</a></li>#}
+{#                <li class="ul-footer"><a href="#">Mon compte</a></li>#}
+{#                <li class="ul-footer"><a href="#">Panier</a></li>#}
+{#                <li class="ul-footer"><a href="#">Contacts</a></li>#}
+{#            </ul>#}
+{#        </div>#}
+{#        <div class="col-css">#}
+{#            <h3>Newsletter <div class="underline"><span></span></div></h3>#}
+{#            <form action="">#}
+{#                <i class='bx bxs-envelope'></i>#}
+{#                <label>#}
+{#                    <input class="input-footer" type="email" placeholder="Entrez votre email">#}
+{#                </label>#}
+{#                <button type="submit"><i class='bx bxs-right-arrow-alt'></i></button>#}
+{#            </form>#}
+{#            <div class="social-icons">#}
+{#                <i class='bx bxl-facebook-circle'></i>#}
+{#                <i class='bx bxl-whatsapp-square'></i>#}
+{#                <i class='bx bxl-youtube'></i>#}
+{#                <i class='bx bxl-linkedin-square' ></i>#}
+{#                <i class='bx bxl-instagram-alt' ></i>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#    <hr>#}
+{#    <p class="copyright">Geoffrey Fleur 2023 © - All Rights Reserved</p>#}
+{#</footer>#}

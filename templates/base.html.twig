@@ -3,23 +3,30 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Accueil{% endblock %} - TheGoldenGun</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link rel="icon" href="{{ asset('assets/css/img/logo.png') }}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 {#        Feuilles de styles #}
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
-        {% block stylesheets %}{% endblock %}
-
-
+        {% block stylesheets %}
+            <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+            <!-- MDB -->
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet">
+{#            <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">#}
+        {% endblock %}
 
 {#        Fichier JS #}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            <!-- MDB -->
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+            <script src="{{ asset('assets/js/scripts.js') }}"></script>
+        {% endblock %}
     </head>
     <body>
+    <div class="container-fluide bg-tertiary">
         {% include '_partials/_nav.html.twig' %}
         {% block body %}{% endblock %}
         {% include '_partials/_footer.html.twig' %}
+    </div>
+
     </body>
 </html>
