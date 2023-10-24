@@ -3,33 +3,33 @@
 {% block title %}Connexion{% endblock %}
 
 {% block body %}
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+{#<form method="post">#}
+{#    {% if error %}#}
+{#        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>#}
+{#    {% endif %}#}
 
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
-    {% endif %}
+{#    {% if app.user %}#}
+{#        <div class="mb-3">#}
+{#            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>#}
+{#        </div>Email#}
+{#    {% endif %}#}
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+{#    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>#}
+{#    <label for="inputEmail">Email</label>#}
+{#    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>#}
+{#    <label for="inputPassword">Password</label>#}
+{#    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>#}
 
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
+{#    <input type="hidden" name="_csrf_token"#}
+{#           value="{{ csrf_token('authenticate') }}"#}
+{#    >#}
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
-</form>
+{#    <button class="btn btn-lg btn-primary" type="submit">#}
+{#        Sign in#}
+{#    </button>#}
+{#</form>#}
 
-    <div class="container form-white">
+    <div class="container form-white" style="width: 23rem; padding-top: 10rem">
         <form method="post">
 
             {% if error %}
@@ -38,20 +38,26 @@
 
             {% if app.user %}
                 <div class="mb-3">
-                    You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+                    Vous êtes connecté(e) comme {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Me déconnecter</a>
                 </div>
             {% endif %}
+
+            <h1 class="h3 mb-3 font-weight-normal">Me connecter</h1>
             <!-- Email input -->
             <div class="form-outline mb-4">
-                <input type="email" id="inputEmail" class="form-control" value="{{ last_username }}"/>
-                <label class="form-label" for="inputEmail">Email address</label>
+                <input type="email" id="inputEmail" class="form-control text-white" value="{{ last_username }}"/>
+                <label class="form-label" for="inputEmail">Email</label>
             </div>
 
             <!-- Password input -->
             <div class="form-outline mb-4">
-                <input type="password" id="inputPassword" class="form-control" />
-                <label class="form-label" for="inputPassword">Password</label>
+                <input type="password" id="inputPassword" class="form-control text-white" />
+                <label class="form-label" for="inputPassword">Mot de passe</label>
             </div>
+
+            <input type="hidden" name="_csrf_token"
+                   value="{{ csrf_token('authenticate') }}"
+            >
 
             <!-- 2 column grid layout for inline styling -->
             <div class="row mb-4">
@@ -59,23 +65,23 @@
                     <!-- Checkbox -->
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="form2Example34" checked />
-                        <label class="form-check-label" for="form2Example34"> Remember me </label>
+                        <label class="form-check-label" for="form2Example34"> Rester connecté </label>
                     </div>
                 </div>
 
                 <div class="col">
                     <!-- Simple link -->
-                    <a href="#!">Forgot password?</a>
+                    <a href="#!">Mot de passe oublié</a>
                 </div>
             </div>
 
             <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+            <button type="submit" class="btn btn-primary btn-block mb-4">Me connecter</button>
 
             <!-- Register buttons -->
             <div class="text-center">
-                <p>Not a member? <a href="#!">Register</a></p>
-                <p>or sign up with:</p>
+                <p>Pas encore membre ? <a href="#!">S'inscrire</a></p>
+                <p>Où s'inscrire avec :</p>
                 <button type="button" class="btn btn-secondary btn-floating mx-1">
                     <i class='bx bxl-facebook-circle' style='color:#3b71ca' ></i>
                 </button>
@@ -89,7 +95,7 @@
                 </button>
 
                 <button type="button" class="btn btn-secondary btn-floating mx-1">
-                    <i class='bx bxl-github' style='color:#3b71ca' ></i>
+                    <i class='bx bxl-github d-flex' style='color:#3b71ca' ></i>
                 </button>
             </div>
         </form>

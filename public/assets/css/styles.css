@@ -28,7 +28,7 @@ nav {
     position: absolute;
     top: 0;
     left: 0;
-    background: linear-gradient(90deg, transparent, var(--tertiary-color-dark), transparent);
+    background: linear-gradient(90deg, purple, darkblue);
     width: 100%;
     padding: 1.3rem 10%;
     display: flex;
