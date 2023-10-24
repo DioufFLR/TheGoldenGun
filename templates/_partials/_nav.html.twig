@@ -1,53 +1,7 @@
 <!--Main Navigation-->
 <header>
-    <style>
-        /* Carousel styling */
-        #introCarousel,
-        .carousel-inner,
-        .carousel-item,
-        .carousel-item.active {
-            height: 100vh;
-        }
-
-        .carousel-item:nth-child(1) {
-            background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center center;
-        }
-        .carousel-item:nth-child(2) {
-            background-image: url('https://mdbootstrap.com/img/Photos/Others/images/77.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center center;
-        }
-        .carousel-item:nth-child(3) {
-            background-image: url('https://mdbootstrap.com/img/Photos/Others/images/78.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center center;
-        }
-
-        /* Height for devices larger than 576px */
-        @media (min-width: 992px) {
-            #introCarousel {
-                margin-top: -58.59px;
-            }
-            #introCarousel,
-            .carousel-inner,
-            .carousel-item,
-            .carousel-item.active {
-                height: 50vh;
-            }
-        }
-
-        .navbar .nav-link {
-            color: #fff !important;
-        }
-    </style>
-
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+    <nav class="navbar navbar-expand-lg navbar-dark d-lg-block" style="z-index: 2000;">
         <div class="container-fluid">
             <!-- Navbar brand -->
             <a class="navbar-brand nav-link" target="_blank" href="https://mdbootstrap.com/docs/standard/">
@@ -63,35 +17,38 @@
                         <a class="nav-link" aria-current="page" href="{{ path('app_main') }}">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" rel="nofollow"
+                        <a class="nav-link" href="#" rel="nofollow"
                            target="_blank">Catégories</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://mdbootstrap.com/docs/standard/" target="_blank">A propos</a>
+                        <a class="nav-link" href="#" target="_blank">A propos</a>
                     </li>
                 </ul>
 
-                <ul class="navbar-nav d-flex flex-row">
+                <ul class="navbar-nav d-flex flex-row ms-auto">
                     <!-- Icons -->
+                    {% if app.user %}
+                        <li class="nav-item me-3 me-lg-0">
+                            <a class="nav-link" href="#" rel="nofollow" target="_blank">
+                                <i class='bx bxs-cart' style='color:#ffffff' ></i>
+                            </a>
+                        </li>
+                        <li class="nav-item me-3 me-lg-0">
+                            <a class="nav-link" href="{{ path('app_logout') }}" rel="nofollow" target="_blank">
+                                <i class='bx bx-user' style='color:#ffffff' ></i>
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item me-3 me-lg-0">
+                            <a class="nav-link" href="{{ path('app_login') }}" rel="nofollow" target="_blank">
+                                <i class='bx bxs-user' style='color:#ffffff'  ></i>
+                             </a>
+                        </li>
+                    {% endif %}
+
                     <li class="nav-item me-3 me-lg-0">
-                        <a class="nav-link" href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" rel="nofollow"
-                           target="_blank">
-                            <i class='bx bxl-youtube' style='color:#ffffff' ></i>
-                        </a>
-                    </li>
-                    <li class="nav-item me-3 me-lg-0">
-                        <a class="nav-link" href="https://www.facebook.com/mdbootstrap" rel="nofollow" target="_blank">
-                            <i class='bx bxl-facebook-circle' style='color:#ffffff' ></i>
-                        </a>
-                    </li>
-                    <li class="nav-item me-3 me-lg-0">
-                        <a class="nav-link" href="https://twitter.com/MDBootstrap" rel="nofollow" target="_blank">
-                            <i class='bx bxl-twitter' style='color:#ffffff' ></i>
-                        </a>
-                    </li>
-                    <li class="nav-item me-3 me-lg-0">
-                        <a class="nav-link" href="https://github.com/DioufFLR" rel="nofollow" target="_blank">
-                            <i class='bx bxl-github' style='color:#ffffff' ></i>
+                        <a class="nav-link" href="" rel="nofollow" target="_blank">
+                            <i class="bx bxs-sun"></i>
                         </a>
                     </li>
                 </ul>

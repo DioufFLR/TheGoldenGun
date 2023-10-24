@@ -16,84 +16,48 @@
 
             {{ form_start(registrationForm) }}
             <div class="row mb-4">
-                <div class="col">
-                    <div class="form-label">
-                            {{ form_row(registrationForm.email) }}
+                <fieldset class="mt-5">
+                    <legend>Identité</legend>
+
+                    <div class="col-12 d-flex">
+                        <div class="col-6">
+                            {{ form_row(registrationForm.userName) }}
+                        </div>
+                        <div class="col-6">
+                            {{ form_row(registrationForm.userFirstName) }}
+                        </div>
                     </div>
-
-                    {{ form_row(registrationForm.userName) }}
-                    {{ form_row(registrationForm.userFirstName) }}
-                    {{ form_row(registrationForm.userAdress) }}
-                    {{ form_row(registrationForm.userCity) }}
-                    {{ form_row(registrationForm.userPC) }}
-                    {{ form_row(registrationForm.userPhone) }}
-                    {{ form_row(registrationForm.userType) }}
-                </div>
-                <div class="col">
-                    <div class="form-outline">
-                        <input type="text" id="form6Example2" class="form-control" />
-                        <label class="form-label" for="form6Example2">
-
-                        </label>
+                    <div class="col-12">
+                        {{ form_row(registrationForm.email) }}
                     </div>
-                </div>
-            </div>
+                </fieldset>
 
+                <fieldset class="mt-5">
+                    <legend class="">Contact</legend>
 
-            {{ form_row(registrationForm.plainPassword, {
-                label: 'Password'
-            }) }}
-            {{ form_row(registrationForm.RGPDConsent) }}
-
-            <button type="submit" class="btn">Register</button>
-            {{ form_end(registrationForm) }}
-
-            <!-- 2 column grid layout with text inputs for the first and last names -->
-            <div class="row mb-4">
-                <div class="col">
+                    <div class="col-12">
+                        {{ form_row(registrationForm.userAdress) }}
+                        {{ form_row(registrationForm.userCity) }}
+                        {{ form_row(registrationForm.userPC) }}
+                        {{ form_row(registrationForm.userPhone) }}
+                        {{ form_row(registrationForm.userType) }}
+                    </div>
+                </fieldset>
 
                 </div>
-
-            </div>
-
-            <!-- Text input -->
-            <div class="form-outline mb-4">
-                <input type="text" id="form6Example3" class="form-control" />
-                <label class="form-label" for="form6Example3">Company name</label>
-            </div>
-
-            <!-- Text input -->
-            <div class="form-outline mb-4">
-                <input type="text" id="form6Example4" class="form-control" />
-                <label class="form-label" for="form6Example4">Address</label>
-            </div>
-
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-                <input type="email" id="form6Example5" class="form-control" />
-                <label class="form-label" for="form6Example5">Email</label>
-            </div>
-
-            <!-- Number input -->
-            <div class="form-outline mb-4">
-                <input type="number" id="form6Example6" class="form-control" />
-                <label class="form-label" for="form6Example6">Phone</label>
-            </div>
-
-            <!-- Message input -->
-            <div class="form-outline mb-4">
-                <textarea class="form-control" id="form6Example7" rows="4"></textarea>
-                <label class="form-label" for="form6Example7"></label>
-            </div>
+            <!-- Password -->
+            {{ form_row(registrationForm.plainPassword, { label: 'Password' }) }}
 
             <!-- Checkbox -->
             <div class="form-check d-flex justify-content-center mb-4">
-                <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
-                <label class="form-check-label" for="form6Example8"> Créer un compte </label>
+                {{ form_row(registrationForm.RGPDConsent) }}
             </div>
 
-            <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-block mb-4">S'inscrire</button>
+            <!-- Submit -->
+            <button type="submit" class="btn btn-primary btn-block mb-4" style="background: #8d3f7e">S'inscrire</button>
+            {{ form_end(registrationForm) }}
+            </div>
+
 
         </form>
 
