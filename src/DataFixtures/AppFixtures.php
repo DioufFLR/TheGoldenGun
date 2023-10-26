@@ -14,10 +14,16 @@ use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory as Faker;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 
 class AppFixtures extends Fixture
 {
+    public function __construct(private readonly UserPasswordHasherInterface $passwordEncoder)
+    {
+
+    }
+
     public function load(ObjectManager $manager): void
     {
         $faker = Faker::create('fr_FR');
@@ -49,10 +55,23 @@ class AppFixtures extends Fixture
                 ->setUserPC($faker->postcode)
                 ->setUserPhone($faker->phoneNumber)
                 ->setUserPicture($faker->image(width: 100, height: 100))
-                ->setUserType($faker->randomElement(['0', '1', '2']));
+                ->setUserType($faker->randomElement(['1', '2']));
             $manager->persist($user);
         }
 
+        $admin = new User();
+        $admin->setEmail('admin@admin.com')
+            ->setRoles(['ROLE_ADMIN'])
+            ->setPassword($this->passwordEncoder->hashPassword($admin, 'bonjour'))
+            ->setUserName('Fleur')
+            ->setUserFirstName('Diouf')
+            ->setUserAdress('1 rue de la vie')
+            ->setUserCity('Paris')
+            ->setUserPC('75010')
+            ->setUserPhone('0632659865')
+            ->setUserPicture($faker->image(width: 100, height: 100))
+            ->setUserType(2);
+        $manager->persist($admin);
         // Création de 8 catégories
 
         $mainCategory = new Category();

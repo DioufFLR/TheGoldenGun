@@ -447,4 +447,8 @@ hr {
 /*    color: var(--primary-color);*/
 /*}*/
 
-/* Bandeau */
+/* Placeholder color */
+
+.place-color::placeholder {
+    color: white;
+}

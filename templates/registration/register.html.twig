@@ -19,16 +19,16 @@
                 <fieldset class="mt-5">
                     <legend>Identité</legend>
 
-                    <div class="col-12 d-flex">
+                    <div class="col-12 d-flex p-2">
                         <div class="col-6">
-                            {{ form_row(registrationForm.userName) }}
+                            {{ form_row(registrationForm.userName, {'label':false}) }}
                         </div>
                         <div class="col-6">
-                            {{ form_row(registrationForm.userFirstName) }}
+                            {{ form_row(registrationForm.userFirstName, {'label':false}) }}
                         </div>
                     </div>
-                    <div class="col-12">
-                        {{ form_row(registrationForm.email) }}
+                    <div class="col-12 p-2">
+                        {{ form_row(registrationForm.email, {'label':false}) }}
                     </div>
                 </fieldset>
 
@@ -36,27 +36,39 @@
                     <legend class="">Contact</legend>
 
                     <div class="col-12">
-                        {{ form_row(registrationForm.userAdress) }}
-                        {{ form_row(registrationForm.userCity) }}
-                        {{ form_row(registrationForm.userPC) }}
-                        {{ form_row(registrationForm.userPhone) }}
-                        {{ form_row(registrationForm.userType) }}
+                        <div class="p-2">
+                            {{ form_row(registrationForm.userAdress, {'label':false}, {'class':''}) }}
+                        </div>
+                        <div class="p-2">
+                            {{ form_row(registrationForm.userCity, {'label':false}) }}
+                        </div>
+                        <div class="p-2">
+                            {{ form_row(registrationForm.userPC, {'label':false}) }}
+                        </div>
+                        <div class="p-2">
+                            {{ form_row(registrationForm.userPhone, {'label':false}) }}
+                        </div>
+                        <div class="p-2">
+                            {{ form_row(registrationForm.userType) }}
+                        </div>
                     </div>
                 </fieldset>
 
                 </div>
             <!-- Password -->
-            {{ form_row(registrationForm.plainPassword, { label: 'Password' }) }}
+            <div class="p-2">
+                {{ form_row(registrationForm.plainPassword, { 'label':false }) }}
+            </div>
 
             <!-- Checkbox -->
-            <div class="form-check d-flex justify-content-center mb-4">
+            <div class="form-check mt-5 mb-2">
                 {{ form_row(registrationForm.RGPDConsent) }}
             </div>
 
             <!-- Submit -->
             <button type="submit" class="btn btn-primary btn-block mb-4" style="background: #8d3f7e">S'inscrire</button>
             {{ form_end(registrationForm) }}
-            </div>
+
 
 
         </form>

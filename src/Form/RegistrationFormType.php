@@ -22,51 +22,59 @@ class RegistrationFormType extends AbstractType
         $builder
             ->add('email', EmailType::class, [
                 'attr' => [
-                    'class' => 'form-control'
+                    'class' => 'form-control place-color',
+                    'placeholder' => 'Email',
+                    'style' => 'background: #8d3f7e; color: white'
                 ],
-                'label' => 'E-mail'
             ])
             ->add('userName', TextType::class, [
                 'attr' => [
-                    'class' => 'form-control'
+                    'class' => 'form-control place-color',
+                    'placeholder' => 'Nom',
+                    'style' => 'background: #8d3f7e; color: white; font-family'
                 ],
-                'label' => 'Nom'
             ])
             ->add('userFirstName', TextType::class, [
                 'attr' => [
-                    'class' => 'form-control'
+                    'class' => 'form-control place-color',
+                    'placeholder' => 'Prénom',
+                    'style' => 'background: #8d3f7e; color: white; font-family'
                 ],
-                'label' => 'Prénom'
             ])
             ->add('userAdress', TextType::class, [
                 'attr' => [
-                    'class' => 'form-control'
+                    'class' => 'form-control place-color',
+                    'placeholder' => 'Votre adresse',
+                    'style' => 'background: #8d3f7e; color: white; font-family'
                 ],
-                'label' => 'Adresse'
             ])
             ->add('userCity', TextType::class, [
                 'attr' => [
-                    'class' => 'form-control'
+                    'class' => 'form-control place-color',
+                    'placeholder' => 'Ville',
+                    'style' => 'background: #8d3f7e; color: white; font-family'
                 ],
-                'label' => 'Ville'
             ])
             ->add('userPC', TextType::class, [
                 'attr' => [
-                    'class' => 'form-control'
+                    'class' => 'form-control place-color',
+                    'placeholder' => 'Code postal',
+                    'style' => 'background: #8d3f7e; color: white; font-family'
                 ],
-                'label' => 'Code postal'
             ])
             ->add('userPhone', TextType::class, [
                 'attr' => [
-                    'class' => 'form-control'
+                    'class' => 'form-control place-color',
+                    'placeholder' => 'Numéro de téléphone',
+                    'style' => 'background: #8d3f7e; color: white; font-family'
                 ],
-                'label' => 'Numéro de téléphone'
             ])
             ->add('userType', ChoiceType::class, [
                 'attr' => [
-                    'class' => 'form-control'
+                    'class' => 'form-control place-color',
+                    'style' => 'background: #8d3f7e; color: white;'
                 ],
-                'label' => 'Type de client',
+                'label' => 'Vous êtes : ',
                 'choices' => [
                     'Particulier' => 1,
                     'Professionnel' => 2,
@@ -76,7 +84,7 @@ class RegistrationFormType extends AbstractType
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'You should agree to our terms.',
+                        'message' => 'Vous devez accepter avant de vous inscrire',
                     ]),
                 ],
                 'label' => "En m'inscrivant à ce site j'accepte... "
@@ -87,7 +95,9 @@ class RegistrationFormType extends AbstractType
                 'mapped' => false,
                 'attr' => [
                     'autocomplete' => 'new-password',
-                    'class' => 'form-control'
+                    'class' => 'form-control place-color',
+                    'placeholder' => 'Mot de passe',
+                    'style' => 'background: #8d3f7e; color: white; font-family'
                 ],
                 'constraints' => [
                     new NotBlank([
@@ -100,7 +110,6 @@ class RegistrationFormType extends AbstractType
                         'max' => 4096,
                     ]),
                 ],
-                'label' => 'Mot de passe',
             ])
         ;
     }

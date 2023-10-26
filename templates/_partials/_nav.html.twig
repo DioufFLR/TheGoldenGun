@@ -29,18 +29,18 @@
                     <!-- Icons -->
                     {% if app.user %}
                         <li class="nav-item me-3 me-lg-0">
-                            <a class="nav-link" href="#" rel="nofollow" target="_blank">
+                            <a class="nav-link" href="#" rel="nofollow">
                                 <i class='bx bxs-cart' style='color:#ffffff' ></i>
                             </a>
                         </li>
                         <li class="nav-item me-3 me-lg-0">
-                            <a class="nav-link" href="{{ path('app_logout') }}" rel="nofollow" target="_blank">
+                            <a class="nav-link" href="{{ path('app_logout') }}" rel="nofollow">
                                 <i class='bx bx-user' style='color:#ffffff' ></i>
                             </a>
                         </li>
                     {% else %}
                         <li class="nav-item me-3 me-lg-0">
-                            <a class="nav-link" href="{{ path('app_login') }}" rel="nofollow" target="_blank">
+                            <a class="nav-link" href="{{ path('app_login') }}" rel="nofollow">
                                 <i class='bx bxs-user' style='color:#ffffff'  ></i>
                              </a>
                         </li>
