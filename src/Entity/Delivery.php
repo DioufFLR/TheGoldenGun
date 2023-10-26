@@ -103,4 +103,26 @@ class Delivery
 
         return $this;
     }
+
+    /**
+     * @param int|null $id
+     */
+    public function setId(?int $id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @param Collection $notes
+     */
+    public function setNotes(Collection $notes): void
+    {
+        $this->notes = $notes;
+    }
+
+    public function __toString(): string
+    {
+        return $this->getId();
+        // TODO: Implement __toString() method.
+    }
 }
