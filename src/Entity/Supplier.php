@@ -147,4 +147,10 @@ class Supplier
 
         return $this;
     }
+
+    public function __toString(): string
+    {
+        return $this->getSupplierName();
+        // TODO: Implement __toString() method.
+    }
 }
