@@ -150,7 +150,7 @@ class Supplier
 
     public function __toString(): string
     {
-        return $this->getSupplierName();
+        return $this->getId();
         // TODO: Implement __toString() method.
     }
 }

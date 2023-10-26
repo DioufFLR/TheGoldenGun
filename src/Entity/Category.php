@@ -129,7 +129,7 @@ class Category
 
     public function __toString(): string
     {
-        return $this->getCategoryName();
+        return $this->getId();
         // TODO: Implement __toString() method.
     }
 }

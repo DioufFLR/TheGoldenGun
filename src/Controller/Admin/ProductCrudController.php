@@ -30,10 +30,9 @@ class ProductCrudController extends AbstractCrudController
             TextField::new('product_description'),
             IdField::new('product_stock'),
             MoneyField::new('product_price')->setCurrency('EUR'),
-//            TextField::new('product_image'),
             BooleanField::new('is_active'),
-            TextField::new('supplier'),
-            TextField::new('category'),
+            IdField::new('supplier'),
+            IdField::new('category'),
         ];
     }
 
