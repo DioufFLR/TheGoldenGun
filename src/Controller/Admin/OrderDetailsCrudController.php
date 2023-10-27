@@ -20,8 +20,8 @@ class OrderDetailsCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id'),
-            IdField::new('orderDetails'),
-            IdField::new('detail_order_id'),
+            IdField::new('product'),
+            IdField::new('detailOrder'),
             IntegerField::new('detail_quantity'),
             MoneyField::new('detail_unit_price')->setCurrency('EUR'),
         ];

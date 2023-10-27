@@ -215,4 +215,9 @@ class Product
         return $this;
     }
 
+    public function __toString(): string
+    {
+        return $this->getId();
+        // TODO: Implement __toString() method.
+    }
 }
