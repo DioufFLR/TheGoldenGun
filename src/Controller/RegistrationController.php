@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Form\RegistrationFormType;
 use App\Security\UserAuthenticator;
+use App\Service\JWTService;
 use App\Service\SendMailService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -22,7 +23,8 @@ class RegistrationController extends AbstractController
                              UserAuthenticatorInterface $userAuthenticator,
                              UserAuthenticator $authenticator,
                              EntityManagerInterface $entityManager,
-                             SendMailService $mail
+                             SendMailService $mail,
+                             JWTService $jwt
                             ): Response
     {
         $user = new User();
@@ -42,13 +44,29 @@ class RegistrationController extends AbstractController
             $entityManager->flush();
             // do anything else you need here, like send an email
 
+            // On génère le JWT de l'utilisateur
+            // On crée le Header
+            $header = [
+                'typ' => 'JWT',
+                'alg' => 'HS256'
+            ];
+
+            // On crée le Payload
+            $payload = [
+                'user_id' => $user->getId()
+            ];
+
+            // On génère le token
+            $token = $jwt->generate($header, $payload, $this->getParameter('app.jwtsecret'));
+
+
             // On envoie un mail
             $mail->send(
                 'no-reply@TheGoldenGun.net',
                 $user->getEmail(),
                 'Activation de votre compte sur le site TheGoldenGun',
                 'register',
-                compact('user')
+                compact('user', 'token')
             );
 
             return $userAuthenticator->authenticateUser(
@@ -62,4 +80,11 @@ class RegistrationController extends AbstractController
             'registrationForm' => $form->createView(),
         ]);
     }
+
+    #[Route('/verif/{token}', name: 'verify_user')]
+    public function verifyUser($token, JWTService $jwt): Response
+    {
+        dd($jwt->isExpired($token));
+    }
+
 }
