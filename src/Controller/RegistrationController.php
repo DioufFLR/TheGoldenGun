@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\RegistrationFormType;
+use App\Repository\UserRepository;
 use App\Security\UserAuthenticator;
 use App\Service\JWTService;
 use App\Service\SendMailService;
@@ -82,9 +83,29 @@ class RegistrationController extends AbstractController
     }
 
     #[Route('/verif/{token}', name: 'verify_user')]
-    public function verifyUser($token, JWTService $jwt): Response
+    public function verifyUser($token, JWTService $jwt, UserRepository $userRepository, EntityManagerInterface $em): Response
     {
-        dd($jwt->isExpired($token));
+        // On vérifie si le token est valide, n'as pas expiré et n'a pas été modifié
+        if ($jwt->isValid($token) && !$jwt->isExpired($token) && $jwt->check($token, $this->getParameter('app.jwtsecret')))
+        {
+            // On récupère le payload
+            $payload = $jwt->getPayload($token);
+
+            // On récupère le user du token
+            $user = $userRepository->find($payload['user_id']);
+
+            // On vérifie que l'utilisateur existe et n'a pas encore activé son compte
+            if ($user && !$user->getIsVerified()){
+                $user->setIsVerified(true);
+                $em->flush($user);
+                $this->addFlash('success', 'Utilisateur activé');
+                return $this->redirectToRoute('app_main');
+            }
+
+        }
+        // Ici un problème se pose dans le token
+        $this->addFlash('danger', 'Le token est invalide ou a expiré');
+        return $this->redirectToRoute('app_login');
     }
 
 }
