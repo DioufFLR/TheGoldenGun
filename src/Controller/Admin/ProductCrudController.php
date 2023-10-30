@@ -31,7 +31,7 @@ class ProductCrudController extends AbstractCrudController
             TextField::new('product_description'),
             IntegerField::new('product_stock'),
             MoneyField::new('product_price')->setCurrency('EUR'),
-            BooleanField::new('is_active'),
+            BooleanField::new('is_active')->renderAsSwitch(false),
             IdField::new('supplier'),
             IdField::new('category'),
         ];

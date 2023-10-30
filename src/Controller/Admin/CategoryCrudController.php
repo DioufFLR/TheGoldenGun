@@ -7,6 +7,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use PhpParser\Node\Expr\Yield_;
 
 class CategoryCrudController extends AbstractCrudController
 {
@@ -17,12 +18,10 @@ class CategoryCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        return [
-            IdField::new('id'),
-//            IntegerField::new('category_sub_id'),
-            TextField::new('category_name'),
-            TextField::new('category_picture'),
-        ];
+        Yield IdField::new('id')->hideWhenCreating();
+        Yield IdField::new('categorySub');
+        Yield TextField::new('category_name');
+        Yield TextField::new('category_picture');
     }
 
 }

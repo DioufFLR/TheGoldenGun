@@ -26,6 +26,7 @@ class Category
 
     #[ORM\OneToMany(mappedBy: 'category', targetEntity: Product::class, orphanRemoval: true)]
     private Collection $products;
+    private ArrayCollection $categorySub;
 
     public function __construct()
     {
@@ -130,6 +131,5 @@ class Category
     public function __toString(): string
     {
         return $this->getId();
-        // TODO: Implement __toString() method.
     }
 }

@@ -9,6 +9,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -24,19 +25,17 @@ class UserCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        return [
-            IdField::new('id'),
-            EmailField::new('email'),
-            ArrayField::new('roles'),
-            TextField::new('password'),
-            TextField::new('user_name'),
-            TextField::new('user_first_name'),
-            TextField::new('user_adress'),
-            TextField::new('user_city'),
-            TextField::new('user_pc'),
-            TextField::new('user_phone'),
-            TextField::new('user_picture'),
-            BooleanField::new('user_type'),
-        ];
+        yield IdField::new('id')->hideWhenCreating();
+        yield EmailField::new('email');
+        yield ArrayField::new('roles');
+        yield TextField::new('password');
+        yield TextField::new('userName');
+        yield TextField::new('userFirstName');
+        yield TextField::new('userAdress');
+        yield TextField::new('userCity');
+        yield TextField::new('userPC');
+        yield TextField::new('userPhone');
+        yield TextField::new('userPicture');
+        yield BooleanField::new('userType');
     }
 }
