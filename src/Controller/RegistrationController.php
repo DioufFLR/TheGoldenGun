@@ -119,7 +119,7 @@ class RegistrationController extends AbstractController
         }
 
         if ($user->getIsVerified()){
-            $this->addFlash('warnig', 'Cette utilisateur est déjà activé');
+            $this->addFlash('warning', 'Cette utilisateur est déjà activé');
             return $this->redirectToRoute('app_main');
         }
 
