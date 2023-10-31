@@ -19,7 +19,9 @@ class CategoryCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        Yield IdField::new('id')->hideWhenCreating();
+        Yield IdField::new('id')
+            ->hideWhenCreating()
+            ->hideOnForm();
         Yield IdField::new('categorySub');
         Yield TextField::new('category_name');
         Yield ImageField::new('category_picture')->setUploadDir('public/assets/css/img');

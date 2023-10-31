@@ -18,7 +18,9 @@ class NoteCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
+            IdField::new('id')
+                ->hideWhenCreating()
+                ->hideOnForm(),
             IdField::new('product'),
             IdField::new('delivery'),
             IntegerField::new('quantity'),

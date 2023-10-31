@@ -18,7 +18,9 @@ class DeliveryCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
+            IdField::new('id')
+                ->hideWhenCreating()
+                ->hideOnForm(),
             IdField::new('deliveryOrder'),
             TextField::new('delivery_compagny'),
             DateTimeField::new('delivery_date'),

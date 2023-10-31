@@ -19,7 +19,9 @@ class OrderCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
+            IdField::new('id')
+                ->hideWhenCreating()
+                ->hideOnForm(),
             IdField::new('user'),
             DateTimeField::new('order_date'),
             IntegerField::new('order_delivery'),

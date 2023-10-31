@@ -31,13 +31,14 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('TheGoldenGun');
+            ->setTitle('TheGoldenGun')
+            ->renderContentMaximized();
     }
 
     public function configureMenuItems(): iterable
     {
          yield MenuItem::linkToCrud('Produits', 'fa-regular fa-registered', Product::class);
-         yield MenuItem::linkToCrud('Categories', 'fa-solid fa-shield-cat', Category::class);
+         yield MenuItem::linkToCrud('Catégories', 'fa-solid fa-shield-cat', Category::class);
          yield MenuItem::linkToCrud('Livraisons', 'fa-solid fa-truck', Delivery::class);
          yield MenuItem::linkToCrud('Commandes', 'fa-solid fa-cart-plus', Order::class);
          yield MenuItem::linkToCrud('Détail commandes', 'fas fa-book', OrderDetails::class);

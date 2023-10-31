@@ -17,7 +17,9 @@ class SupplierCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
+            IdField::new('id')
+                ->hideWhenCreating()
+                ->hideOnForm(),
             TextField::new('supplier_name'),
             TextField::new('supplier_phone'),
             TextField::new('supplier_city'),
