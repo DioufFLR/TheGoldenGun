@@ -14,6 +14,7 @@ use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory as Faker;
+use http\Url;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 
@@ -76,36 +77,36 @@ class AppFixtures extends Fixture
 
         $mainCategory = new Category();
         $mainCategory->setCategoryName('Armes de poing')
-            ->setCategoryPicture($faker->image(width: 200, height: 200));
+            ->setCategoryPicture('assets/css/img/pistolet.jpg');
         $manager->persist($mainCategory);
 
         $mainCategory2 = new Category();
-        $mainCategory2->setCategoryName("Armes d'épaule")
-            ->setCategoryPicture($faker->image(width: 200, height: 200));
+        $mainCategory2->setCategoryName("Fusils de précision")
+            ->setCategoryPicture('assets/css/img/fusil_précision.jpg');
         $manager->persist($mainCategory2);
 
         $category3 = new Category();
-        $category3->setCategoryName('Revolver')
+        $category3->setCategoryName('Fusils à pompe')
             ->setCategorySub($mainCategory)
-            ->setCategoryPicture($faker->image(width: 200, height: 200));
+            ->setCategoryPicture('assets/css/img/shotgun.jpg');
         $manager->persist($category3);
 
         $category4 = new Category();
-        $category4->setCategoryName('Pistolet')
+        $category4->setCategoryName('Pistolets mitrailleurs')
             ->setCategorySub($mainCategory)
-            ->setCategoryPicture($faker->image(width: 200, height: 200));
+            ->setCategoryPicture('assets/css/img/landing.jpg');
         $manager->persist($category4);
 
         $category5 = new Category();
-        $category5->setCategoryName('Pistolet mitrailleur')
+        $category5->setCategoryName('Armes exotiques')
             ->setCategorySub($mainCategory)
-            ->setCategoryPicture($faker->image(width: 200, height: 200));
+            ->setCategoryPicture('assets/css/img/exotiques.jpg');
         $manager->persist($category5);
 
         $category6 = new Category();
         $category6->setCategoryName("Fusil d'assaut")
             ->setCategorySub($mainCategory2)
-            ->setCategoryPicture($faker->image(width: 200, height: 200));
+            ->setCategoryPicture('assets/css/img/fusils_assaut.jpg');
         $manager->persist($category6);
 
     // Création de 100 produits

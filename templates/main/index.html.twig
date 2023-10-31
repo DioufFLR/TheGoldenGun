@@ -96,6 +96,7 @@
     <!--Main layout-->
     <main class="mt-5">
         <div class="container">
+
             <!--Section: Content-->
             <section>
                 <div class="row">
@@ -124,6 +125,7 @@
                     </div>
                 </div>
             </section>
+
             <!--Section: Content-->
 
             <hr class="my-5" />
@@ -133,16 +135,17 @@
                 <h4 class="mb-5"><strong>Catégories les plus consultées</strong></h4>
 
                 <div class="row">
+                    {% for category in categories %}
                     <div class="col-lg-4 col-md-12 mb-4">
                         <div class="card">
                             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                <img src="{{ asset('assets/css/img/pistolet.jpg') }}" class="img-fluid" />
+                                <img src="{{ category.categoryPicture }}" class="img-fluid" />
                                 <a href="#!">
                                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                                 </a>
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title">Armes de poings</h5>
+                                <h5 class="card-title">{{ category.categoryName }}</h5>
                                 <p class="card-text">
                                     Some quick example text to build on the card title and make up the bulk of the
                                     card's content.
@@ -151,44 +154,8 @@
                             </div>
                         </div>
                     </div>
+                    {% endfor %}
 
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card">
-                            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                <img src="{{ asset('assets/css/img/fusil1.jpg') }}" class="img-fluid" />
-                                <a href="#!">
-                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Armes d'épaules</h5>
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make up the bulk of the
-                                    card's content.
-                                </p>
-                                <a href="#!" class="btn btn-primary">Voir</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card">
-                            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                <img src="{{ asset('assets/css/img/exotiques.jpg') }}" class="img-fluid" />
-                                <a href="#!">
-                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Armes exotiques</h5>
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make up the bulk of the
-                                    card's content.
-                                </p>
-                                <a href="#!" class="btn btn-primary">Voir</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </section>
             <!--Section: Content-->
