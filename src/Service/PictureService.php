@@ -7,6 +7,7 @@ use phpDocumentor\Reflection\Types\False_;
 use Symfony\Component\DependencyInjection\Exception\EnvParameterException;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use function PHPUnit\Framework\fileExists;
 use function PHPUnit\Framework\throwException;
 
 class PictureService
@@ -68,5 +69,48 @@ class PictureService
                 $src_Y = 0;
                 break;
         }
+
+        // On crée une nouvelle image 'vierge'
+        $resizePicture = imagecreatetruecolor($width, $height);
+
+        imagecopyresampled($resizePicture, $pictureSource, 0, 0, $src_X, $src_Y, $width, $height, $squareSize);
+
+        $path = $this->params->get('images_directory') . $folder;
+
+        // On crée le dossier de destination s'il n'existe pas
+        if (!file_exists($path . '/mini/')) {
+            mkdir('/mini/', 0755, true);
+        }
+
+        // On stocke l'image recadrée
+        imagewebp($resizePicture, $path . '/mini/' . $width . 'x' . $height . '-' . $fichier);
+
+        $picture->move($path . '/', $fichier);
+
+        return $fichier;
+    }
+
+    public function delete(string $fichier, ?string $folder = '', ?int $width = 250, ?int $height = 250)
+    {
+        if ($fichier !== 'default.webp') {
+            $success = false;
+            $path = $this->params->get('images_directory') . $folder;
+
+            $mini = $path . '/mini/' . $width . 'x' . $height . '-' . $fichier;
+
+            if (file_exists($mini)) {
+                unlink($mini);
+                $success = true;
+            }
+
+            $original = $path . '/' . $fichier;
+
+            if (file_exists($original)) {
+                unlink($mini);
+                $success = true;
+            }
+            return $success;
+       }
+        return false;
     }
 }

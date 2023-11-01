@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "70741e79615c42a8bff4ceb0492f582f",
+    "content-hash": "11d7dc5bd7b361fb54268925a89d2203",
     "packages": [
         {
             "name": "doctrine/cache",
@@ -1322,16 +1322,16 @@
         },
         {
             "name": "easycorp/easyadmin-bundle",
-            "version": "v4.8.1",
+            "version": "v4.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/EasyCorp/EasyAdminBundle.git",
-                "reference": "7e15b4367ac79222d62e804a649782f32b8f0f55"
+                "reference": "f9e50a3bdcee3194d332525e52d3c064eb5cf1c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/EasyCorp/EasyAdminBundle/zipball/7e15b4367ac79222d62e804a649782f32b8f0f55",
-                "reference": "7e15b4367ac79222d62e804a649782f32b8f0f55",
+                "url": "https://api.github.com/repos/EasyCorp/EasyAdminBundle/zipball/f9e50a3bdcee3194d332525e52d3c064eb5cf1c0",
+                "reference": "f9e50a3bdcee3194d332525e52d3c064eb5cf1c0",
                 "shasum": ""
             },
             "require": {
@@ -1404,7 +1404,7 @@
             ],
             "support": {
                 "issues": "https://github.com/EasyCorp/EasyAdminBundle/issues",
-                "source": "https://github.com/EasyCorp/EasyAdminBundle/tree/v4.8.1"
+                "source": "https://github.com/EasyCorp/EasyAdminBundle/tree/v4.8.3"
             },
             "funding": [
                 {
@@ -1412,7 +1412,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-26T18:09:27+00:00"
+            "time": "2023-10-29T19:21:38+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -1483,16 +1483,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "3.4.0",
+            "version": "3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "e2392369686d420ca32df3803de28b5d6f76867d"
+                "reference": "c915e2634718dbc8a4a15c61b0e62e7a44e14448"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/e2392369686d420ca32df3803de28b5d6f76867d",
-                "reference": "e2392369686d420ca32df3803de28b5d6f76867d",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/c915e2634718dbc8a4a15c61b0e62e7a44e14448",
+                "reference": "c915e2634718dbc8a4a15c61b0e62e7a44e14448",
                 "shasum": ""
             },
             "require": {
@@ -1568,7 +1568,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
-                "source": "https://github.com/Seldaek/monolog/tree/3.4.0"
+                "source": "https://github.com/Seldaek/monolog/tree/3.5.0"
             },
             "funding": [
                 {
@@ -1580,7 +1580,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-06-21T08:46:11+00:00"
+            "time": "2023-10-27T15:32:31+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -3305,16 +3305,16 @@
         },
         {
             "name": "symfony/flex",
-            "version": "v2.4.0",
+            "version": "v2.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/flex.git",
-                "reference": "46bebc3d097d1bb1dce04c5ba83658afd79988f9"
+                "reference": "ae6dea68771c5fca9d172e0c0910bdd06199f6f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/flex/zipball/46bebc3d097d1bb1dce04c5ba83658afd79988f9",
-                "reference": "46bebc3d097d1bb1dce04c5ba83658afd79988f9",
+                "url": "https://api.github.com/repos/symfony/flex/zipball/ae6dea68771c5fca9d172e0c0910bdd06199f6f4",
+                "reference": "ae6dea68771c5fca9d172e0c0910bdd06199f6f4",
                 "shasum": ""
             },
             "require": {
@@ -3350,7 +3350,7 @@
             "description": "Composer plugin for Symfony",
             "support": {
                 "issues": "https://github.com/symfony/flex/issues",
-                "source": "https://github.com/symfony/flex/tree/v2.4.0"
+                "source": "https://github.com/symfony/flex/tree/v2.4.1"
             },
             "funding": [
                 {
@@ -3366,7 +3366,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-10-22T18:05:25+00:00"
+            "time": "2023-10-30T18:35:17+00:00"
         },
         {
             "name": "symfony/form",
@@ -9829,8 +9829,9 @@
         "php": ">=8.1",
         "ext-ctype": "*",
         "ext-http": "*",
-        "ext-iconv": "*"
+        "ext-iconv": "*",
+        "ext-gd": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
