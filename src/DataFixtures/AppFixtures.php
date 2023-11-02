@@ -116,7 +116,6 @@ class AppFixtures extends Fixture
             $product->setProductLabel($faker->word)
                 ->setProductDescription($faker->sentence($nbWords = 6, $variableNbWords = true))
                 ->setProductStock($faker->numberBetween($min = 0, $max = 2000))
-                ->setProductPicture($faker->image(width: 100, height: 100))
                 ->setProductPrice($faker->randomFloat(3, 1, 1000))
                 ->setIsActive(true)
                 ->setCategory($faker->randomElement([$category3, $category4, $category5, $category6]))

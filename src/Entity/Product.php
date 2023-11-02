@@ -25,9 +25,6 @@ class Product
     #[ORM\Column]
     private ?int $productStock = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $productPicture = null;
-
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 3)]
     private ?string $productPrice = null;
 
@@ -48,10 +45,14 @@ class Product
     #[ORM\OneToMany(mappedBy: 'product', targetEntity: Note::class)]
     private Collection $notes;
 
+    #[ORM\OneToMany(mappedBy: 'products', targetEntity: Picture::class, cascade: ['persist'], orphanRemoval: true)]
+    private Collection $pictures;
+
     public function __construct()
     {
         $this->orderDetails = new ArrayCollection();
         $this->notes = new ArrayCollection();
+        $this->pictures = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -91,18 +92,6 @@ class Product
     public function setProductStock(int $productStock): static
     {
         $this->productStock = $productStock;
-
-        return $this;
-    }
-
-    public function getProductPicture(): ?string
-    {
-        return $this->productPicture;
-    }
-
-    public function setProductPicture(string $productPicture): static
-    {
-        $this->productPicture = $productPicture;
 
         return $this;
     }
@@ -219,5 +208,35 @@ class Product
     {
         return $this->getId();
         // TODO: Implement __toString() method.
+    }
+
+    /**
+     * @return Collection<int, Picture>
+     */
+    public function getPictures(): Collection
+    {
+        return $this->pictures;
+    }
+
+    public function addPicture(Picture $picture): static
+    {
+        if (!$this->pictures->contains($picture)) {
+            $this->pictures->add($picture);
+            $picture->setProducts($this);
+        }
+
+        return $this;
+    }
+
+    public function removePicture(Picture $picture): static
+    {
+        if ($this->pictures->removeElement($picture)) {
+            // set the owning side to null (unless already changed)
+            if ($picture->getProducts() === $this) {
+                $picture->setProducts(null);
+            }
+        }
+
+        return $this;
     }
 }

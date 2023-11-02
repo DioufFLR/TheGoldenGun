@@ -8,6 +8,7 @@ use App\Entity\Note;
 use App\Entity\Order;
 use App\Entity\OrderDetails;
 use App\Entity\Payment;
+use App\Entity\Picture;
 use App\Entity\Product;
 use App\Entity\Supplier;
 use App\Entity\User;
@@ -37,14 +38,15 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-         yield MenuItem::linkToCrud('Produits', 'fa-regular fa-registered', Product::class);
-         yield MenuItem::linkToCrud('Catégories', 'fa-solid fa-shield-cat', Category::class);
-         yield MenuItem::linkToCrud('Livraisons', 'fa-solid fa-truck', Delivery::class);
-         yield MenuItem::linkToCrud('Commandes', 'fa-solid fa-cart-plus', Order::class);
-         yield MenuItem::linkToCrud('Détail commandes', 'fas fa-book', OrderDetails::class);
+        yield MenuItem::linkToCrud('Produits', 'fa-regular fa-registered', Product::class);
+        yield MenuItem::linkToCrud('Catégories', 'fa-solid fa-shield-cat', Category::class);
+        yield MenuItem::linkToCrud('Livraisons', 'fa-solid fa-truck', Delivery::class);
+        yield MenuItem::linkToCrud('Commandes', 'fa-solid fa-cart-plus', Order::class);
+        yield MenuItem::linkToCrud('Détail commandes', 'fas fa-book', OrderDetails::class);
         yield MenuItem::linkToCrud('Bons', 'fa-solid fa-note-sticky', Note::class);
+        yield MenuItem::linkToCrud('Images produits', 'fa-solid fa-images', Picture::class);
         yield MenuItem::linkToCrud('Paiements', 'fa-regular fa-credit-card', Payment::class);
-         yield MenuItem::linkToCrud('Fournisseurs', 'fa-solid fa-user-secret', Supplier::class);
-         yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-user', User::class);
+        yield MenuItem::linkToCrud('Fournisseurs', 'fa-solid fa-user-secret', Supplier::class);
+        yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-user', User::class);
     }
 }
