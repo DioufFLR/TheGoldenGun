@@ -16,11 +16,13 @@ use Doctrine\Persistence\ObjectManager;
 use Faker\Factory as Faker;
 use http\Url;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 
 class AppFixtures extends Fixture
 {
-    public function __construct(private readonly UserPasswordHasherInterface $passwordEncoder)
+
+    public function __construct(private readonly UserPasswordHasherInterface $passwordEncoder,private SluggerInterface $slugger)
     {
 
     }
@@ -118,6 +120,7 @@ class AppFixtures extends Fixture
                 ->setProductStock($faker->numberBetween($min = 0, $max = 2000))
                 ->setProductPrice($faker->randomFloat(3, 1, 1000))
                 ->setIsActive(true)
+                ->setSlug($this->slugger->slug($product->getProductLabel())->lower())
                 ->setCategory($faker->randomElement([$category3, $category4, $category5, $category6]))
                 ->setSupplier($faker->randomElement([$supplier]));
             $this->addReference('product-' . $i, $product);

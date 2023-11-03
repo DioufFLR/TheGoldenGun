@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails produit {{ product.productLabel }}{% endblock %}
+
+{% block body %}
+<div class="container m-5">
+    <!--Section: Content-->
+    <section class="text-center mt-5">
+        <h1 class="mb-5"><strong>Détails</strong></h1>
+
+{#        <div class="row">#}
+{#                <div class="col-lg-4 col-md-6 mb-4">#}
+{#                    <div class="card" style="width: 20rem; height: 25rem">#}
+{#                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">#}
+{#                            <img src="{{  }}" class="img-fluid" />#}
+{#                            <a href="#!">#}
+{#                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>#}
+{#                            </a>#}
+{#                        </div>#}
+{#                        <div class="card-body">#}
+{#                            <h5 class="card-title">{{ product.productLabel }}</h5>#}
+{#                            <p class="card-text">#}
+{#                                {{ product.productDescription }}#}
+{#                            </p>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+
+{#        </div>#}
+
+    </section>
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img
+                        src="https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp"
+                        alt="Trendy Pants and Shoes"
+                        class="img-fluid rounded-start bg-image hover-overlay ripple"
+                />
+            </div>
+            <div class="col-md-8 d-flex justify-content-between">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.productLabel }}</h5>
+                    <p class="card-text">{{ product.productDescription }}</p>
+                    <p class="card-text">
+                        <small class="text-muted">{{ product.productPrice }} euros</small>
+                    </p>
+                    <a href="#" class="btn btn-outline-danger">Ajouter au panier</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+    <!--Section: Content-->
+{% endblock %}
