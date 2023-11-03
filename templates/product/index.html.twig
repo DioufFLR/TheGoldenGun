@@ -12,12 +12,12 @@
             {% for product in products %}
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card" style="width: 20rem; height: 25rem">
-{#                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">#}
-{#                            <img src="{{  }}" class="img-fluid" />#}
-{#                            <a href="#!">#}
-{#                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>#}
-{#                            </a>#}
-{#                        </div>#}
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                            <img src="{{ asset('assets/css/img/armes1.jpg') }}" class="img-fluid" />
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </a>
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">{{ product.productLabel }}</h5>
                             <p class="card-text">
@@ -31,5 +31,6 @@
 
         </div>
     </section>
+</div>
     <!--Section: Content-->
 {% endblock %}
