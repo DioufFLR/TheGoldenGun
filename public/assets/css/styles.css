@@ -370,85 +370,9 @@ hr {
     }
 }
 
-/* Main cards */
-
-/*.main-container {*/
-/*    position: relative;*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    flex-wrap: wrap;*/
-/*    gap: 100px 50px;*/
-/*    padding: 100px 50px;*/
-/*    margin-top: 6em;*/
-/*}*/
-
-/*.main-container .card {*/
-/*    position: relative;*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: flex-start;*/
-/*    width: 350px;*/
-/*    height: 300px;*/
-/*    background: linear-gradient(90deg, transparent, var(--mdb-black-rgb), transparent);*/
-/*    border-radius: 20px;*/
-/*    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);*/
-/*    transition: 0.5s;*/
-/*}*/
-
-/*.main-container .card:hover {*/
-/*    height: 400px;*/
-/*}*/
-
-/*.main-container .card .imgBx {*/
-/*    position: absolute;*/
-/*    width: 300px;*/
-/*    height: 220px;*/
-/*    background: #333;*/
-/*    border-radius: 12px;*/
-/*    overflow: hidden;*/
-/*    transition: 0.5s;*/
-/*}*/
-
-/*.main-container .card:hover .imgBx {*/
-/*    top: -100px;*/
-/*    scale: 0.75;*/
-/*    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);*/
-/*}*/
-
-/*.main-container .card .imgBx img {*/
-/*    position: absolute;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    object-fit: cover;*/
-/*}*/
-
-/*.main-container .card .content {*/
-/*    position: absolute;*/
-/*    top: 252px;*/
-/*    width: 100%;*/
-/*    padding: 0 30px;*/
-/*    height: 30px;*/
-/*    overflow: hidden;*/
-/*    text-align: center;*/
-/*    transition: 0.5s;*/
-/*}*/
-
-/*.main-container .card:hover .content {*/
-/*    top: 130px;*/
-/*    height: 250px;*/
-/*}*/
-
-/*.main-container .card .content h2 {*/
-/*    font-size: 1.5em;*/
-/*    font-weight: 700;*/
-/*    color: var(--primary-color);*/
-/*}*/
-
 /* Placeholder color */
 
 .place-color::placeholder {
     color: white;
 }
+

@@ -7,16 +7,10 @@
     <!--Section: Content-->
     <section class="text-center mt-5">
         <h1 class="mb-5"><strong>Détails</strong></h1>
-
-
     </section>
     <div class="card mb-3 col-12" style="max-width: 1280px;">
         <div class="row g-0">
             <div class="col-md-7">
-{#                <img#}
-{#                        src="https://previews.123rf.com/images/artfully/artfully2104/artfully210400020/167100389-armes-et-%C3%A9quipements-militaires-pour-l-arm%C3%A9e-fusil-d-assaut-m4a1-sur-fond-d-uniforme-militaire.jpg"#}
-{#                        alt="Trendy Pants and Shoes"#}
-{#                        class="rounded-start bg-image img-fluid"/>#}
                 <div id="carouselProduct" class="carousel slide carousel-fade" data-mdb-ride="carousel">
                     <div class="carousel-indicators">
                         <button
@@ -42,7 +36,7 @@
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="{{ asset('assets/css/img/armes1.jpg') }}" class="d-block img-fluid" alt="Armes"/>
+                            <img src="{{ asset('assets/css/img/armes1.jpg') }}" class="d-block img-fluid" alt="{{ product.productLabel }}"/>
                         </div>
                         <div class="carousel-item">
                             <img src="{{ asset('assets/css/img/armes2.jpg') }}" class="d-block w-100" alt="Armes 2"/>
@@ -70,8 +64,13 @@
                         <small class="text-muted h5"><strong>Prix : {{ product.productPrice }} euros</strong></small>
                     </p>
                     <div class="d-flex justify-content-end" style="padding-top: 5rem">
-                        <a href="#" class="btn btn-outline-danger">Ajouter au panier</a>
+                        {% if product.productStock > 0 %}
+                            <a href="{{ path('cart_add', { id: product.id }) }}" class="btn btn-outline-danger">Ajouter au panier</a>
+                        {% else %}
+                            <p class="text-danger">Temporairement en rupture de stock</p>
+                        {% endif %}
                     </div>
+
                 </div>
             </div>
         </div>
