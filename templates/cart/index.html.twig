@@ -49,9 +49,9 @@
                                                         <div style="width: 80px;">
                                                             <p class="mb-0">{{ element.quantity * element.product.productPrice }}€</p>
                                                         </div>
-                                                        <a href="#!" style="color: green;"><i class="fa-solid fa-plus m-2"></i></a>
-                                                        <a href="#!" style="color: yellow;"><i class="fa-solid fa-minus m-2"></i></a>
-                                                        <a href="#!" style="color: red;"><i class="fas fa-trash-alt m-2"></i></a>
+                                                        <a href="{{ path('cart_add', {id: element.product.id}) }}" style="color: green;"><i class="fa-solid fa-plus m-2"></i></a>
+                                                        <a href="{{ path('cart_remove', {id: element.product.id}) }}" style="color: yellow;"><i class="fa-solid fa-minus m-2"></i></a>
+                                                        <a href="{{ path('cart_delete', {id: element.product.id}) }}" style="color: red;"><i class="fas fa-trash-alt m-2"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -136,7 +136,7 @@
                                             <button type="button" class="btn btn-info btn-block btn-lg">
                                                 <div class="d-flex justify-content-between">
                                                     <span>{{ total }}€</span>
-                                                    <span>Payer <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
+                                                    <a href="{{ path('app_order_add') }}">Payer <i class="fas fa-long-arrow-alt-right ms-2"></i></a>
                                                 </div>
                                             </button>
 

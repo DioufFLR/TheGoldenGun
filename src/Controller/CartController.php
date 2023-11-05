@@ -8,6 +8,7 @@ use PharIo\Version\AbstractVersionConstraint;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use function PHPUnit\Framework\isReadable;
 
 #[Route('/panier', name: 'cart_')]
 class CartController extends AbstractController
@@ -54,5 +55,51 @@ class CartController extends AbstractController
 
         // On redirige vers la page du panier
         return $this->redirectToRoute('cart_index');
+    }
+
+    #[Route('/enlever/{id}', name: 'remove')]
+    public function remove(Product $product, SessionInterface $session)
+    {
+        // On récupère l'id du produit
+        $id = $product->getId();
+
+        // On récupère le panier existant s'il existe
+        $cart = $session->get('cart', []);
+
+        // On retire le produit dans le panier s'il n'y a qu'un exemplaire
+        // Sinon on décrémente sa quantité
+        if (!empty($cart[$id])) {
+            if ($cart[$id] > 1) {
+                $cart[$id]--;
+            } else {
+                unset($cart);
+            }
+
+            $session->set('cart', $cart);
+
+            // On redirige vers la page du panier
+            return $this->redirectToRoute('cart_index');
+        }
+    }
+
+    #[Route('/supprimer/{id}', name: 'delete')]
+    public function delete(Product $product, SessionInterface $session)
+    {
+        // On récupère l'id du produit
+        $id = $product->getId();
+
+        // On récupère le panier existant s'il existe
+        $cart = $session->get('cart', []);
+
+
+        if (!empty($cart[$id])) {
+            unset($cart[$id]);
+        }
+
+        $session->set('cart', $cart);
+
+        // On redirige vers la page du panier
+        return $this->redirectToRoute('cart_index');
+
     }
 }
