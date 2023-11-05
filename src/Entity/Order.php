@@ -34,7 +34,7 @@ class Order
     #[ORM\ManyToOne(inversedBy: 'orders')]
     private ?User $user = null;
 
-    #[ORM\OneToMany(mappedBy: 'detailOrder', targetEntity: OrderDetails::class)]
+    #[ORM\OneToMany(mappedBy: 'detailOrder', targetEntity: OrderDetails::class, cascade: ['persist'])]
     private Collection $orderDetails;
 
     #[ORM\OneToMany(mappedBy: 'deliveryOrder', targetEntity: Delivery::class)]
@@ -44,6 +44,7 @@ class Order
     {
         $this->orderDetails = new ArrayCollection();
         $this->deliveries = new ArrayCollection();
+        $this->orderDate = new \DateTime('now');
     }
 
     public function getId(): ?int
