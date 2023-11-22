@@ -59,7 +59,7 @@ class OrderController extends AbstractController
         $entityManager->persist($order);
         $entityManager->flush();
 
-        $session->remove('cart');
+//       sys
 
         $this->addFlash('message', 'Commande créée avec succès');
 

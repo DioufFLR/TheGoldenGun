@@ -9,6 +9,8 @@
     --secondary-color-green: rgb(99,255,204);
 }
 
+
+
 * {
     margin: 0;
     padding: 0;
@@ -376,3 +378,6 @@ hr {
     color: white;
 }
 
+.zindex {
+    z-index: 700;
+}
