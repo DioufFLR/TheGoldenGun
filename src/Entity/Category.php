@@ -28,6 +28,9 @@ class Category
     private Collection $products;
     private ArrayCollection $categorySub;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $categoryDescription = null;
+
     public function __construct()
     {
         $this->categorySub = new ArrayCollection();
@@ -131,5 +134,17 @@ class Category
     public function __toString(): string
     {
         return $this->getId();
+    }
+
+    public function getCategoryDescription(): ?string
+    {
+        return $this->categoryDescription;
+    }
+
+    public function setCategoryDescription(?string $categoryDescription): static
+    {
+        $this->categoryDescription = $categoryDescription;
+
+        return $this;
     }
 }

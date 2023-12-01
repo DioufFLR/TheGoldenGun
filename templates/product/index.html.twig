@@ -3,34 +3,31 @@
 {% block title %}Produits{% endblock %}
 
 {% block body %}
-<div class="container">
-    <!--Section: Content-->
-    <section class="text-center mt-5">
-        <h1 class="mb-5"><strong>Nos armes</strong></h1>
+    <div class="container">
+        <!--Section: Content-->
+        <section class="text-center mt-5">
+            <h1 class="mb-5"><strong>Nos armes</strong></h1>
 
-        <div class="row">
-            {% for product in products %}
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card" style="width: 20rem; height: 25rem">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img src="{{ asset('assets/css/img/armes1.jpg') }}" class="img-fluid" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">{{ product.productLabel }}</h5>
-                            <p class="card-text">
-                                {{ product.productDescription }}
-                            </p>
-                            <a href="{{ path('product_details', {'slug': product.slug}) }}" class="btn btn-primary">Voir</a>
+            <div class="row">
+                {% for product in products %}
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card" style="width: 20rem; height: 20rem">
+                            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                <img src="{{ asset('assets/css/img/armes1.jpg') }}" class="img-fluid"/>
+                                <a href="#!">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ product.productLabel }}</h5>
+                                <a href="/produit/{{ product.id }}" class="btn btn-primary">Voir</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
 
-        </div>
-    </section>
-</div>
+            </div>
+        </section>
+    </div>
     <!--Section: Content-->
 {% endblock %}

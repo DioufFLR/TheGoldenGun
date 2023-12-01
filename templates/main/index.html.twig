@@ -133,7 +133,7 @@
 
             <!--Section: Content-->
             <section class="text-center">
-                <h4 class="mb-5"><strong>Catégories les plus consultées</strong></h4>
+                <h4 class="mb-5"><strong>Catégories principales</strong></h4>
 
                 <div class="row">
                     {% for category in categories %}
@@ -148,8 +148,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{ category.categoryName }}</h5>
                                     <p class="card-text">
-                                        Some quick example text to build on the card title and make up the bulk of the
-                                        card's content.
+                                        {{ category.categoryDescription }}
                                     </p>
                                     <a href="#!" class="btn btn-primary">Voir</a>
                                 </div>
